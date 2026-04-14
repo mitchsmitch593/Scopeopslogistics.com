@@ -21,6 +21,11 @@ const formatAnswer = (answer: string) =>
         </span>
       </summary>
       <p class="mt-4 max-w-3xl text-sm leading-7 text-charcoal-800" set:html={formatAnswer(item.answer)} />
+      {item.cta && (
+        <a href={item.cta.href} class="mt-5 inline-flex text-sm font-semibold text-brand-950 hover:text-accent-500">
+          {item.cta.label} →
+        </a>
+      )}
     </details>
   ))}
 </div>

@@ -10,6 +10,10 @@ export const faqs: FaqItem[] = [
     question: 'How do you handle pricing?',
     answer:
       '**No hourly fluff.** ScopeOps provides project-based quotes tied to the agreed scope, estimated volume, timeline, work type, and site requirements. Once the scope is confirmed, pricing stays tied to that scope; if the requirements change, the quote is reviewed before work proceeds so there are fewer surprises.',
+    cta: {
+      label: 'Receive a project quote for your specific scope',
+      href: '/request-a-quote',
+    },
   },
   {
     question: 'What counts as a project or backlog?',

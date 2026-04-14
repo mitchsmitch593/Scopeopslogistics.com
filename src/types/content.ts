@@ -56,6 +56,10 @@ export interface Industry {
 export interface FaqItem {
   question: string;
   answer: string;
+  cta?: {
+    label: string;
+    href: string;
+  };
 }
 
 export interface Expectation {

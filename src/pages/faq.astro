@@ -73,7 +73,11 @@ const fitNo = [
           <ul class="mt-4 space-y-3">
             {fitYes.map((item) => (
               <li class="flex gap-3 text-sm leading-7 text-white/80">
-                <span class="mt-1 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-accent-500/15 text-xs font-bold text-accent-400">+</span>
+                <span class="mt-1 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-emerald-600 text-white" aria-hidden="true">
+                  <svg class="h-3.5 w-3.5" viewBox="0 0 16 16" fill="none">
+                    <path d="M3.5 8.3 6.5 11.2 12.5 4.8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </span>
                 <span>{item}</span>
               </li>
             ))}
@@ -84,7 +88,11 @@ const fitNo = [
           <ul class="mt-4 space-y-3">
             {fitNo.map((item) => (
               <li class="flex gap-3 text-sm leading-7 text-white/70">
-                <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-white/45"></span>
+                <span class="mt-1 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-accent-500 text-brand-950" aria-hidden="true">
+                  <svg class="h-3.5 w-3.5" viewBox="0 0 16 16" fill="none">
+                    <path d="M8 4.2v4.4M8 11.8h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                  </svg>
+                </span>
                 <span>{item}</span>
               </li>
             ))}
@@ -100,6 +108,7 @@ const fitNo = [
       title="Get a quote, not a sales pitch."
       description="Not sure if your project fits the ScopeOps model? Send the details. We will give you a straight answer on whether the scope is quote-ready."
       primaryLabel="Request a Project Quote"
+      supportText="Fast response: most quote assessments receive an initial response within one business day."
     />
   </Section>
 </BaseLayout>
