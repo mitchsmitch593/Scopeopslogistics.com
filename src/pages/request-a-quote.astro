@@ -13,13 +13,13 @@ import { siteConfig } from '@/data/site';
 >
   <Hero
     eyebrow="Request a quote"
-    title="Tell us what needs to get done."
-    description="Use this form when you need help with a warehouse task, backlog, surge, or special project. Pricing is based on scope, volume, timing, work type, and location."
+    title="Request a quote for a warehouse job."
+    description="Share the task, volume, timeline, and location. ScopeOps reviews the information and follows up with the next step."
     primaryCta={{ label: 'Start Your Request', href: '#quote-form' }}
     secondaryCta={{ label: 'How It Works', href: '/how-it-works' }}
     compact
-    panelTitle="What helps us quote faster"
-    panelBody="The clearest requests describe the type of work, estimated volume, location, and timeline so we can review the scope quickly."
+    panelTitle="What helps us respond faster"
+    panelBody="Useful details include work type, estimated units, dock or facility constraints, urgency, and whether the need is one-time or recurring."
   />
 
   <Section id="quote-form">
@@ -27,8 +27,8 @@ import { siteConfig } from '@/data/site';
       <div>
         <SectionIntro
           eyebrow="Quote request"
-          title="Start with the job putting the most pressure on your team."
-          description="Share the work, the volume, and when you need help. The clearer the scope, the faster we can review it and send the next step."
+          title="Start with the warehouse task that needs attention first."
+          description="The form is built for project-based warehouse work, not open-ended labor requests. Include the details you already know."
         />
         <div class="mt-8">
           <QuoteForm />
@@ -44,7 +44,7 @@ import { siteConfig } from '@/data/site';
           </div>
           <div class="rounded-[1.5rem] border border-charcoal-100 bg-mist-100 px-6 py-5">
             <p class="text-xs font-semibold uppercase tracking-[0.22em] text-accent-500">Quote and next step</p>
-            <p class="mt-3 text-sm leading-7 text-charcoal-900">Once the scope is clear, you receive a quote and a clear next step for moving the work forward.</p>
+            <p class="mt-3 text-sm leading-7 text-charcoal-900">Once the review is complete, you receive pricing and the recommended path for moving the work forward.</p>
           </div>
         </div>
       </div>

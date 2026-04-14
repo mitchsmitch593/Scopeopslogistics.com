@@ -3,32 +3,32 @@ import type { ProcessStep } from '@/types/content';
 export const processSteps: ProcessStep[] = [
   {
     step: '01',
-    title: 'Tell us about the job',
+    title: 'Send the job details',
     description:
-      'Share the warehouse task, problem, or project you need completed, along with timing and site details.',
+      'Share the task, facility location, timing, and any operating constraints that matter.',
   },
   {
     step: '02',
-    title: 'Scope and volume review',
+    title: 'We review the workload',
     description:
-      'We review the type of work, estimated volume, timeline, and any site requirements before finalizing the quote.',
+      'We look at the work type, estimated units, timeline, and site conditions that affect execution.',
   },
   {
     step: '03',
-    title: 'You receive a quote',
+    title: 'You get job-based pricing',
     description:
-      'Pricing is based on the job and its scope, not on simply placing hourly labor into your building.',
+      'The quote is tied to the project requirements instead of an open-ended hourly labor request.',
   },
   {
     step: '04',
-    title: 'The work gets done',
+    title: 'The project moves forward',
     description:
-      'The job gets done with a clear focus on moving work, reducing backlog, and minimizing disruption to your team.',
+      'The work is handled with a focus on throughput, communication, and keeping disruption low.',
   },
   {
     step: '05',
-    title: 'Your team stays focused',
+    title: 'Your team gets relief',
     description:
-      'You get the warehouse work done without overloading supervisors or pulling your staff away from their main work.',
+      'Supervisors and internal staff stay focused on the work they already own.',
   },
 ];

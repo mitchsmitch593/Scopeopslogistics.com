@@ -4,25 +4,25 @@ export const industries: Industry[] = [
   {
     title: 'E-commerce',
     description:
-      'A strong fit for e-commerce brands and fulfillment teams when order spikes, backlog, and time-sensitive outbound volume start straining the floor.',
-    fit: 'Best when overflow fulfillment, kitting, or rapid order surges need a clear plan.',
+      'For brands and fulfillment teams dealing with order spikes, promotional demand, or time-sensitive outbound volume.',
+    fit: 'Useful when overflow fulfillment, kitting, or order surges are straining daily output.',
   },
   {
     title: 'Retail',
     description:
-      'A strong fit for retail supply and replenishment operations that need help with inbound pressure, prep work, or specific warehouse projects.',
-    fit: 'Strong fit for promotional builds, relabeling, prep work, and inbound pressure.',
+      'For retail supply and replenishment teams that need help with inbound pressure, prep work, or store-related projects.',
+    fit: 'Good for promotional builds, relabeling, prep work, and inbound support.',
   },
   {
     title: 'Consumer Products',
     description:
-      'A strong fit for consumer product businesses managing packaging changes, seasonal peaks, retailer prep, and recurring warehouse overflow.',
-    fit: 'Useful when rework, bundling, or project work is slowing the rest of the operation.',
+      'For product companies managing packaging changes, seasonal peaks, retailer prep, and recurring warehouse overflow.',
+    fit: 'Useful when rework, bundling, or project work is slowing the floor.',
   },
   {
     title: 'Health and Wellness Products',
     description:
-      'A strong fit for health and wellness brands that need warehouse relief without distracting the internal team from daily output.',
+      'For health and wellness brands that need warehouse relief without distracting the internal team from daily output.',
     fit: 'A practical fit for kit builds, returns processing, and overflow support.',
   },
   {
@@ -34,13 +34,13 @@ export const industries: Industry[] = [
   {
     title: 'Industrial Goods',
     description:
-      'A strong fit for industrial operations with defined project work, inbound or outbound pressure, and warehouse tasks that need focused attention.',
-    fit: 'Strong fit for special projects, backlog cleanup, and structured support.',
+      'For industrial operations with project work, inbound or outbound pressure, and warehouse tasks that need focused attention.',
+    fit: 'Good for special projects, backlog cleanup, and structured support.',
   },
   {
     title: 'Growing Brands',
     description:
-      'A strong fit for growing brands when order volume and complexity outpace the team’s available warehouse capacity.',
+      'For growing brands when order volume and complexity outpace available warehouse capacity.',
     fit: 'Useful when growth starts creating recurring surges, backlog, or project work the team cannot absorb.',
   },
   {

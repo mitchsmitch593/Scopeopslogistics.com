@@ -14,20 +14,20 @@ import { services } from '@/data/services';
 >
   <Hero
     eyebrow="Services"
-    title="Warehouse help for jobs that need to get done."
-    description="These services are built for teams that need extra capacity to clear work, reduce pressure, and keep the warehouse moving."
+    title="Warehouse services for overflow, backlogs, and special projects."
+    description="Use ScopeOps when the work is specific, the pressure is real, and your internal team needs added capacity without a traditional temp-labor arrangement."
     primaryCta={{ label: 'Request a Quote', href: '/request-a-quote' }}
     secondaryCta={{ label: 'How It Works', href: '/how-it-works' }}
     compact
-    panelTitle="Quoted by the job"
-    panelBody="Bring the project, surge, or backlog. We review the work, define the scope, and quote it around what the job actually requires."
+    panelTitle="Built around execution"
+    panelBody="The conversation starts with the work: what it is, how much there is, where it is happening, and when it needs attention."
   />
 
   <Section>
     <SectionIntro
       eyebrow="Service lines"
-      title="Built for overflow, backlog, and project work."
-      description="If the warehouse work is clear and it needs to get done, it is likely a strong fit for this model."
+      title="Choose the service that matches the warehouse bottleneck."
+      description="Each service is written around real operational pressure: inbound freight, outbound volume, project work, returns, and cleanup."
     />
     <div class="mt-10 grid gap-6 lg:grid-cols-2">
       {services.map((service) => <ServiceCard service={service} />)}
@@ -39,19 +39,19 @@ import { services } from '@/data/services';
       <div class="card-surface p-7">
         <p class="text-xs font-semibold uppercase tracking-[0.22em] text-accent-500">Use this model when</p>
         <p class="mt-4 text-sm leading-7 text-charcoal-900">
-          The work is clear, important, and hard to absorb with the team you already have on the floor.
+          The task is defined, time-sensitive, and difficult to absorb with the team already on the floor.
         </p>
       </div>
       <div class="card-surface p-7">
         <p class="text-xs font-semibold uppercase tracking-[0.22em] text-accent-500">Quoted by the job</p>
         <p class="mt-4 text-sm leading-7 text-charcoal-900">
-          Pricing is tied to the work itself, with a clear scope and a clear path to getting it done.
+          Pricing is tied to the workload and requirements, not simply the number of labor hours requested.
         </p>
       </div>
       <div class="card-surface p-7">
         <p class="text-xs font-semibold uppercase tracking-[0.22em] text-accent-500">Best fit for</p>
         <p class="mt-4 text-sm leading-7 text-charcoal-900">
-          Warehouse and supply-chain teams that need fast relief and a solution they can explain clearly inside the business.
+          Operators who need a practical answer to a capacity problem and a simple way to explain the spend.
         </p>
       </div>
     </div>

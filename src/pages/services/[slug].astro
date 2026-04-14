@@ -37,12 +37,12 @@ const serviceSchema = {
   <Hero
     eyebrow="Warehouse service"
     title={`${service.title} for warehouse teams that need the work completed.`}
-    description={`${service.summary} ScopeOps Logistics reviews the work, clarifies the volume and timing, and quotes the job based on scope instead of hourly labor.`}
+    description={`${service.summary} ScopeOps Logistics reviews the workload, timing, and site requirements before quoting the project.`}
     primaryCta={{ label: 'Get a Quote', href: '/request-a-quote' }}
     secondaryCta={{ label: 'View All Services', href: '/services' }}
     compact
-    panelTitle="Quoted around the job"
-    panelBody="The strongest fit is a defined warehouse task with a clear volume, timeline, location, and operational outcome."
+    panelTitle="Project-based support"
+    panelBody="The strongest requests include the work type, estimated volume, location, timing, and any facility constraints."
   />
 
   <Section>
@@ -70,7 +70,7 @@ const serviceSchema = {
         <div class="card-dark p-8">
           <p class="text-xs font-semibold uppercase tracking-[0.22em] text-accent-400">Best next step</p>
           <p class="mt-4 text-sm leading-7 text-white/80">
-            Send the work type, estimated volume, needed-by date, and facility location so the job can be reviewed quickly.
+            Send the work type, estimated volume, needed-by date, and facility location so ScopeOps can review the request.
           </p>
           <a href="/request-a-quote" class="btn-primary mt-6 !bg-accent-500 !text-brand-950 hover:!bg-accent-400">
             Request a Quote
@@ -91,7 +91,7 @@ const serviceSchema = {
     <SectionIntro
       eyebrow="Related services"
       title="Other scoped warehouse support options."
-      description="These pages create focused search entry points while still keeping the site clear and easy to navigate."
+      description="Explore related services if the warehouse need spans more than one workflow."
     />
     <div class="mt-10 grid gap-6 lg:grid-cols-3">
       {relatedServices.map((item) => (

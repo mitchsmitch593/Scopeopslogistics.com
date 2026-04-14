@@ -16,9 +16,9 @@ export const siteConfig: SiteConfig = {
   serviceArea: 'Regional warehouse operations support',
   responseTime: 'Initial response within one business day for most quote requests.',
   heroHighlights: [
-    'Built for overflow, backlog, and special projects',
-    'Quoted by the job with a clear scope',
-    'Your team stays focused on its core work',
+    'Project-based support for warehouse surges and backlogs',
+    'Pricing tied to the work, volume, and timeline',
+    'Relief without pulling your core team off the floor',
   ],
   differentiators: [
     'The work is reviewed, scoped, and quoted around the job itself.',
@@ -27,10 +27,10 @@ export const siteConfig: SiteConfig = {
     'Your team stays focused on daily work while the extra warehouse load gets handled.',
   ],
   trustPoints: [
-    'Clear scope before work begins',
-    'Direct communication from first conversation to quote',
-    'Support built for real warehouse work',
-    'Job-based pricing with clear next steps',
+    'Job-based quotes before work begins',
+    'Direct communication from inquiry to completion',
+    'Support for practical warehouse workflows',
+    'Flexible capacity without a long hiring cycle',
   ],
   quoteFactors: [
     'Scope of the task or project',
@@ -40,15 +40,15 @@ export const siteConfig: SiteConfig = {
     'Facility location and operating constraints',
   ],
   aboutPrinciples: [
-    'Focused on getting the work done',
-    'Clear scope and clear communication',
-    'Support that works with your operation, not against it',
-    'Relief for backlog, overflow, and special projects',
+    'Practical execution over complicated staffing plans',
+    'Straightforward communication before and during the job',
+    'Support that fits the way your facility actually runs',
+    'Relief for overflow, backlog, and project work',
   ],
   qualificationFits: [
     'Companies with containers, overflow orders, returns, or special projects that need the work completed',
     'Warehouse teams that need extra capacity without pulling core staff away from day-to-day work',
-    'Operations leaders who want clear scope, clear pricing, and a simple next step',
+    'Operations leaders who want project-based pricing and a practical execution plan',
   ],
   qualificationNotFits: [
     'Open-ended requests for hourly temp labor with no defined warehouse scope',
