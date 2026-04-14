@@ -4,12 +4,12 @@ export const faqs: FaqItem[] = [
   {
     question: 'How is this different from a temp agency?',
     answer:
-      '**Temp agencies sell time; ScopeOps sells a finished result.** The biggest difference is management drag. You bring a defined warehouse task, backlog, surge, or special project, and ScopeOps structures the work around completion instead of open-ended hourly coverage.',
+      '**Temp agencies sell time; ScopeOps sells a finished result.** The biggest difference is management drag. You bring a defined warehouse task, backlog, surge, or special project, and ScopeOps structures the work around completion instead of open-ended hourly coverage. A project lead or single point of contact helps keep communication, pace, and execution organized.',
   },
   {
     question: 'How do you handle pricing?',
     answer:
-      '**Quotes are project-based.** Pricing is built around the agreed scope, estimated volume, timeline, work type, and site requirements. If the scope changes, the quote can be reviewed before work proceeds so there are fewer surprises.',
+      '**No hourly fluff.** ScopeOps provides project-based quotes tied to the agreed scope, estimated volume, timeline, work type, and site requirements. Once the scope is confirmed, pricing stays tied to that scope; if the requirements change, the quote is reviewed before work proceeds so there are fewer surprises.',
   },
   {
     question: 'What counts as a project or backlog?',
@@ -19,7 +19,7 @@ export const faqs: FaqItem[] = [
   {
     question: 'What about safety and facility requirements?',
     answer:
-      '**Safety alignment is part of the scope review.** ScopeOps plans work around your facility protocols, operating expectations, equipment rules, and site requirements before work begins. If a project has special compliance needs, include those details in the quote request.',
+      '**Safety alignment is part of the scope review.** ScopeOps plans work around your facility protocols, operating expectations, equipment rules, insurance documentation requirements, and site requirements before work begins. If a project has special compliance needs, include those details in the quote request.',
   },
   {
     question: 'How quickly can you deploy a team?',
@@ -29,7 +29,7 @@ export const faqs: FaqItem[] = [
   {
     question: 'Do I need to provide equipment?',
     answer:
-      '**Most projects are planned around the facility workflow.** If forklifts, pallet jacks, RF scanners, docks, or other equipment are required, those details should be included during scoping so the work follows your standards and operating process.',
+      '**Most projects are planned around the facility workflow.** If forklifts, pallet jacks, RF scanners, docks, PPE, or other equipment rules are required, those details should be included during scoping. The team is briefed on your facility standards before work begins so the project integrates into your workflow instead of disrupting it.',
   },
   {
     question: 'What types of warehouse jobs do you handle?',
@@ -39,6 +39,6 @@ export const faqs: FaqItem[] = [
   {
     question: 'Do you offer recurring support?',
     answer:
-      '**Yes, when the workload pattern is defined enough to plan.** Some companies need one-time surge support, while others need recurring help with predictable overflow, returns, or project work.',
+      '**Yes, when the workload pattern is defined enough to plan.** Some clients use ScopeOps as a triggered team: they call when a specific backlog hits a threshold, a recurring returns pileup needs relief, or a certain number of containers arrive. It is not permanent headcount; it is a repeatable solution for defined peaks.',
   },
 ];

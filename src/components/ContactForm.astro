@@ -37,6 +37,7 @@ import { contactFormFields } from '@/data/forms';
             placeholder={field.placeholder}
             required={field.required}
             autocomplete={field.autocomplete}
+            aria-describedby={field.helpText ? `${field.id}-help` : undefined}
           ></textarea>
         ) : (
           <input
@@ -47,7 +48,14 @@ import { contactFormFields } from '@/data/forms';
             placeholder={field.placeholder}
             required={field.required}
             autocomplete={field.autocomplete}
+            aria-describedby={field.helpText ? `${field.id}-help` : undefined}
           />
+        )}
+
+        {field.helpText && (
+          <p id={`${field.id}-help`} class="mt-2 text-xs leading-6 text-charcoal-800">
+            {field.helpText}
+          </p>
         )}
       </div>
     ))}

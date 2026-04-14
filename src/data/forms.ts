@@ -80,10 +80,11 @@ export const quoteFormFields: FormField[] = [
   },
   {
     id: 'needed-by',
-    label: 'Timeline / Needed By',
+    label: 'Preferred Start Date / Needed By',
     name: 'neededBy',
     type: 'date',
     required: true,
+    helpText: 'Use the earliest realistic date you want the project to begin or be completed by.',
   },
   {
     id: 'frequency',
@@ -95,11 +96,11 @@ export const quoteFormFields: FormField[] = [
   },
   {
     id: 'additional-details',
-    label: 'Additional Details',
+    label: 'Share the Scope',
     name: 'additionalDetails',
     type: 'textarea',
     placeholder:
-      'Tell us about volume assumptions, hours of operation, dock constraints, project complexity, or anything else helpful for scoping.',
+      'Share the task, volume assumptions, hours of operation, dock constraints, project complexity, safety requirements, or anything else helpful for scoping.',
     helpText: 'The more detail you share, the faster we can review the scope.',
   },
 ];
@@ -140,12 +141,20 @@ export const contactFormFields: FormField[] = [
     autocomplete: 'tel',
   },
   {
+    id: 'contact-start-date',
+    label: 'Preferred Start Date',
+    name: 'preferredStartDate',
+    type: 'date',
+    helpText: 'If timing matters, share when you would ideally like support to begin.',
+  },
+  {
     id: 'contact-message',
-    label: 'How can we help?',
+    label: 'Share the Scope',
     name: 'message',
     type: 'textarea',
     placeholder:
-      'Share the warehouse challenge, service interest, or timeline you want to discuss.',
+      'Share the warehouse challenge, volume, service interest, facility location, timeline, or urgent bottleneck you want to discuss.',
     required: true,
+    helpText: 'Specifics help us route the request and respond with a practical next step.',
   },
 ];
