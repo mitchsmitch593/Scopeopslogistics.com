@@ -30,7 +30,7 @@ const featuredIndustries = industries.slice(0, 4);
     title="On-demand warehouse support for overflow, backlog, and project work."
     description="When containers pile up, orders spike, or projects keep slipping, bring us the work. We scope it, quote it by the job, and get it done without pulling your team off its priorities."
     kicker="Quoted by the job. Built for overflow, backlog, and special projects."
-    primaryCta={{ label: 'Get a Job Quote', href: '/request-a-quote' }}
+    primaryCta={{ label: 'Get a Warehouse Quote', href: '/request-a-quote' }}
     secondaryCta={{ label: 'See Services', href: '/services' }}
     highlights={siteConfig.heroHighlights}
     panelTitle="Built for work that needs relief"
@@ -41,7 +41,7 @@ const featuredIndustries = industries.slice(0, 4);
     <div class="rounded-[1.5rem] border border-charcoal-100 bg-white/80 px-6 py-4 shadow-sm backdrop-blur">
       <div class="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
         <p class="text-sm font-medium text-charcoal-900">
-          Serving businesses in the <span class="font-semibold text-brand-950">Columbus, Ohio area</span> with project-based warehouse support.
+          Serving businesses with <span class="font-semibold text-brand-950">project-based warehouse support</span> for overflow, backlog, and special work.
         </p>
         <a href="/contact" class="text-sm font-semibold text-brand-950 hover:text-brand-700">
           Talk through local fit
@@ -97,7 +97,7 @@ const featuredIndustries = industries.slice(0, 4);
         View All Services
       </a>
     </div>
-    <div class="mt-10 grid gap-6 lg:grid-cols-2 xl:grid-cols-4">
+    <div class="mt-10 grid gap-6 lg:grid-cols-2">
       {featuredServices.map((service) => <ServiceCard service={service} compact />)}
     </div>
     <div class="mt-8 lg:hidden">
@@ -117,7 +117,7 @@ const featuredIndustries = industries.slice(0, 4);
       title="Work is piling up and your team cannot keep taking it on."
       description="This model works best when the need is clear, the pressure is real, and you do not want to pull your team away from the work it already owns."
     />
-    <div class="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+    <div class="mt-10 grid gap-6 md:grid-cols-2">
       {useCases.map((useCase) => <UseCaseCard useCase={useCase} />)}
     </div>
   </Section>
@@ -147,13 +147,7 @@ const featuredIndustries = industries.slice(0, 4);
         </div>
       </div>
     </div>
-    <div class="mt-8 grid gap-8 lg:grid-cols-[24rem_minmax(0,1fr)] lg:items-start">
-      <div class="card-dark p-8">
-        <p class="eyebrow !border-white/15 !bg-white/5 !text-accent-400">Not designed for</p>
-        <div class="mt-5 space-y-4 text-sm leading-7 text-white/80">
-          {siteConfig.qualificationNotFits.map((item) => <p>{item}</p>)}
-        </div>
-      </div>
+    <div class="mt-8">
       <div>
         <div class="flex items-end justify-between gap-6">
           <SectionIntro
@@ -165,7 +159,7 @@ const featuredIndustries = industries.slice(0, 4);
             Explore Fit
           </a>
         </div>
-        <div class="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+        <div class="mt-10 grid gap-6 md:grid-cols-2">
           {featuredIndustries.map((industry) => <IndustryCard industry={industry} />)}
         </div>
       </div>

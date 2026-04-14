@@ -8,7 +8,7 @@ interface Props {
 const { steps } = Astro.props;
 ---
 
-<ol class="grid gap-6 lg:grid-cols-5">
+<ol class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
   {steps.map((item) => (
     <li class="card-surface h-full p-6">
       <span class="text-xs font-semibold uppercase tracking-[0.24em] text-accent-500">
