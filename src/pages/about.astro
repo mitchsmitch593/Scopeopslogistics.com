@@ -9,16 +9,19 @@ import { siteConfig } from '@/data/site';
 const manifestoItems = [
   {
     title: 'Outcome over hours',
+    icon: 'timer',
     description:
       'Open-ended hourly billing can reward slow work. ScopeOps is built around project-based quotes so the priority stays on finishing the warehouse task accurately and efficiently.',
   },
   {
     title: 'Accountability on the floor',
+    icon: 'clipboard',
     description:
       'ScopeOps does not simply drop off labor. Projects are coordinated around throughput, safety alignment, your facility requirements, and any insurance documentation needed before work begins.',
   },
   {
     title: 'Surgical execution',
+    icon: 'target',
     description:
       'We are not here to replace your staff. We handle the operational debt: backlogs, rework, unloading, returns, and surges that should not slow down your primary operation.',
   },
@@ -69,7 +72,7 @@ const comparisonRows = [
         outbound volume slipping, and temporary labor creating more supervision than relief. The company is positioned to be the partner
         operators actually need: one that reviews the task, coordinates the work, and helps clear the floor so the core team can keep the daily flow moving.
       </p>
-      <p class="mt-5 max-w-4xl rounded-2xl bg-mist-100 p-5 text-sm font-semibold leading-7 text-brand-950">
+      <p class="mt-5 max-w-4xl rounded-2xl border-l-4 border-accent-500 bg-mist-100 p-5 text-sm font-semibold leading-7 text-brand-950 shadow-sm">
         We exist to stop the operational leaks: detention fees, lost floor space, missed ship times, and hidden expenses that build when warehouse work sits unfinished.
       </p>
     </div>
@@ -84,7 +87,28 @@ const comparisonRows = [
     <div class="mt-10 grid gap-6 lg:grid-cols-3">
       {manifestoItems.map((item) => (
         <article class="card-surface p-7">
-          <h2 class="text-xl font-semibold tracking-tight text-brand-950">{item.title}</h2>
+          <div class="flex items-center gap-4">
+            <span class="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-brand-950 text-accent-400" aria-hidden="true">
+              {item.icon === 'timer' && (
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none">
+                  <path d="M9 3h6M12 7v5l3 2M19 12a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              )}
+              {item.icon === 'clipboard' && (
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none">
+                  <path d="M9 5h6M9 12h6M9 16h4M8 4h8l1 2h2v14H5V6h2l1-2Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              )}
+              {item.icon === 'target' && (
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none">
+                  <path d="M20 12a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z" stroke="currentColor" stroke-width="1.8" />
+                  <path d="M16 12a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z" stroke="currentColor" stroke-width="1.8" />
+                  <path d="M12 12h.01" stroke="currentColor" stroke-width="3" stroke-linecap="round" />
+                </svg>
+              )}
+            </span>
+            <h2 class="text-xl font-semibold tracking-tight text-brand-950">{item.title}</h2>
+          </div>
           <p class="mt-4 text-sm leading-7 text-charcoal-800">{item.description}</p>
         </article>
       ))}

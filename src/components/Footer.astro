@@ -55,6 +55,8 @@ const footerServices = services.slice(0, 4);
                 <a href={item.href} class="mt-1 inline-block hover:text-white">
                   {item.value}
                 </a>
+              ) : item.label === 'Response Time' ? (
+                <p class="mt-1 font-semibold text-white">{item.value}</p>
               ) : (
                 <p class="mt-1">{item.value}</p>
               )}
