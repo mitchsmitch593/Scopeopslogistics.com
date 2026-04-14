@@ -1,0 +1,66 @@
+---
+import CTABanner from '@/components/CTABanner.astro';
+import Hero from '@/components/Hero.astro';
+import IndustryCard from '@/components/IndustryCard.astro';
+import Section from '@/components/Section.astro';
+import SectionIntro from '@/components/SectionIntro.astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { industries } from '@/data/industries';
+---
+
+<BaseLayout
+  title="Who We Help"
+  description="Built for e-commerce, retail, consumer products, industrial operations, and growing brands dealing with warehouse overflow and special projects."
+>
+  <Hero
+    eyebrow="Who we help"
+    title="Built for businesses that have warehouse work to complete, not just a need for extra hours on the floor."
+    description="The common thread is not the industry alone. It is the situation: overflow, backlog, special projects, or workload spikes that need a clear plan."
+    primaryCta={{ label: 'Request a Quote', href: '/request-a-quote' }}
+    secondaryCta={{ label: 'View Services', href: '/services' }}
+    compact
+    panelTitle="Who this helps most"
+    panelBody="Teams dealing with overflow, backlog, or special projects where the priority is getting warehouse work done without pulling their own people away from the floor."
+  />
+
+  <Section>
+    <SectionIntro
+      eyebrow="Where this works well"
+      title="Examples of the kinds of businesses we support."
+      description="Industry matters, but the bigger question is simple: is there clear warehouse work that needs to get done without adding temp staffing?"
+    />
+    <div class="mt-10 grid gap-6 lg:grid-cols-2 xl:grid-cols-4">
+      {industries.map((industry) => <IndustryCard industry={industry} />)}
+    </div>
+  </Section>
+
+  <Section surface="mist">
+    <div class="grid gap-6 lg:grid-cols-3">
+      <div class="card-surface p-7">
+        <p class="text-xs font-semibold uppercase tracking-[0.22em] text-accent-500">Growing brands</p>
+        <p class="mt-4 text-sm leading-7 text-charcoal-900">
+          Especially useful when order volume, returns, or special projects start outpacing the team’s available capacity.
+        </p>
+      </div>
+      <div class="card-surface p-7">
+        <p class="text-xs font-semibold uppercase tracking-[0.22em] text-accent-500">Established operations</p>
+        <p class="mt-4 text-sm leading-7 text-charcoal-900">
+          Also a fit for mature operations that do not want to disrupt the floor by reassigning internal staff to every exception.
+        </p>
+      </div>
+      <div class="card-surface p-7">
+        <p class="text-xs font-semibold uppercase tracking-[0.22em] text-accent-500">Defined workload only</p>
+        <p class="mt-4 text-sm leading-7 text-charcoal-900">
+          The clearest fit is a real warehouse task, surge, or project with a measurable scope rather than an open-ended labor request.
+        </p>
+      </div>
+    </div>
+  </Section>
+
+  <Section>
+    <CTABanner
+      title="Not sure if your operation is a fit?"
+      description="Reach out with the type of work, volume, and timeline. If the warehouse need is clear, it can usually be turned into a practical next step."
+    />
+  </Section>
+</BaseLayout>

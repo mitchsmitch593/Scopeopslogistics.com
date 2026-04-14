@@ -1,0 +1,22 @@
+---
+interface Props {
+  id?: string;
+  className?: string;
+  surface?: 'default' | 'mist' | 'dark';
+}
+
+const { id, className, surface = 'default' } = Astro.props;
+
+const surfaceClasses = {
+  default: '',
+  mist: 'bg-mist-100/75',
+  dark: 'bg-brand-950 text-white',
+};
+---
+
+<section id={id} class:list={['section-pad', surfaceClasses[surface], className]}>
+  <div class="section-break"></div>
+  <div class="container-shell">
+    <slot />
+  </div>
+</section>

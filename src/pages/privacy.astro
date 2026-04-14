@@ -1,0 +1,62 @@
+---
+import Hero from '@/components/Hero.astro';
+import Section from '@/components/Section.astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { siteConfig } from '@/data/site';
+---
+
+<BaseLayout
+  title="Privacy Policy"
+  description="Privacy policy for ScopeOps Logistics website quote requests, contact forms, and business inquiries."
+>
+  <Hero
+    eyebrow="Privacy"
+    title="Privacy Policy"
+    description="This page explains how ScopeOps Logistics handles information submitted through the website."
+    secondaryCta={{ label: 'Contact Us', href: '/contact' }}
+    compact
+    panelTitle="Plain-language privacy"
+    panelBody="Only collect what is needed to respond to quote requests, contact requests, and warehouse service inquiries."
+  />
+
+  <Section>
+    <div class="max-w-3xl space-y-8 text-base leading-8 text-charcoal-800">
+      <p class="text-sm font-semibold uppercase tracking-[0.2em] text-accent-500">Last updated: April 14, 2026</p>
+      <div>
+        <h2 class="font-serif text-3xl font-medium tracking-tight text-brand-950">Information We Collect</h2>
+        <p class="mt-4">
+          When you submit a quote request or contact form, ScopeOps Logistics may collect your company name, contact name,
+          email address, phone number, facility location, type of warehouse work needed, estimated volume, timeline, and any
+          details you choose to provide.
+        </p>
+      </div>
+      <div>
+        <h2 class="font-serif text-3xl font-medium tracking-tight text-brand-950">How We Use Information</h2>
+        <p class="mt-4">
+          We use submitted information to respond to inquiries, review warehouse project scope, prepare quotes, communicate
+          about service fit, and improve the website experience.
+        </p>
+      </div>
+      <div>
+        <h2 class="font-serif text-3xl font-medium tracking-tight text-brand-950">Sharing</h2>
+        <p class="mt-4">
+          We do not sell personal information. Information may be shared only with service providers or systems needed to
+          operate the website, manage leads, communicate with you, or comply with legal requirements.
+        </p>
+      </div>
+      <div>
+        <h2 class="font-serif text-3xl font-medium tracking-tight text-brand-950">Security</h2>
+        <p class="mt-4">
+          We use reasonable safeguards for website and business communications. No online transmission is completely secure,
+          so avoid sending highly sensitive information through the website form.
+        </p>
+      </div>
+      <div>
+        <h2 class="font-serif text-3xl font-medium tracking-tight text-brand-950">Contact</h2>
+        <p class="mt-4">
+          Questions about this policy can be sent to <a href={`mailto:${siteConfig.generalEmail}`} class="font-semibold text-brand-950 hover:text-accent-500">{siteConfig.generalEmail}</a>.
+        </p>
+      </div>
+    </div>
+  </Section>
+</BaseLayout>

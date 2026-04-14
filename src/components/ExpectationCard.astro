@@ -1,0 +1,15 @@
+---
+import type { Expectation } from '@/types/content';
+
+interface Props {
+  expectation: Expectation;
+}
+
+const { expectation } = Astro.props;
+---
+
+<article class="card-surface flex h-full flex-col p-7">
+  <p class="text-xs font-semibold uppercase tracking-[0.2em] text-accent-500">What to expect</p>
+  <h3 class="mt-4 text-2xl font-semibold tracking-tight text-brand-950">{expectation.title}</h3>
+  <p class="mt-4 text-sm leading-7 text-charcoal-800">{expectation.description}</p>
+</article>

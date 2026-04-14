@@ -1,0 +1,106 @@
+@import "@fontsource-variable/public-sans";
+@import "@fontsource-variable/newsreader";
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Public Sans Variable", "Avenir Next", "Segoe UI", sans-serif;
+  --font-serif: "Newsreader Variable", "Iowan Old Style", Georgia, serif;
+
+  --color-brand-950: #09111d;
+  --color-brand-900: #122037;
+  --color-brand-800: #1b2e4a;
+  --color-brand-700: #29476f;
+  --color-charcoal-950: #11161d;
+  --color-charcoal-900: #1b222c;
+  --color-charcoal-800: #2d3745;
+  --color-charcoal-200: #cdd4de;
+  --color-charcoal-100: #e7ebf0;
+  --color-mist-100: #f4f7fb;
+  --color-mist-200: #eef2f7;
+  --color-accent-500: #d19a2a;
+  --color-accent-400: #e9bb57;
+  --shadow-panel: 0 18px 55px rgba(9, 17, 29, 0.12);
+}
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-white font-sans text-charcoal-900 antialiased;
+    background-image:
+      radial-gradient(circle at top left, rgba(209, 154, 42, 0.08), transparent 30%),
+      linear-gradient(to bottom, #f7f9fc 0%, #ffffff 16rem);
+  }
+
+  ::selection {
+    background: rgba(209, 154, 42, 0.2);
+    color: #09111d;
+  }
+
+  a,
+  button,
+  input,
+  select,
+  textarea,
+  summary {
+    @apply transition duration-200 ease-out;
+  }
+
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible,
+  summary:focus-visible {
+    @apply outline-none ring-2 ring-accent-500 ring-offset-2 ring-offset-white;
+  }
+}
+
+@layer components {
+  .container-shell {
+    @apply mx-auto w-full max-w-7xl px-6 lg:px-8;
+  }
+
+  .section-pad {
+    @apply py-18 sm:py-22 lg:py-26;
+  }
+
+  .card-surface {
+    @apply rounded-[1.75rem] border border-charcoal-100 bg-white shadow-[var(--shadow-panel)];
+    background-image: linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(248, 250, 252, 0.72));
+  }
+
+  .card-dark {
+    @apply rounded-[1.75rem] border border-white/10 bg-brand-950 text-white shadow-[var(--shadow-panel)];
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 rounded-full border border-accent-500/30 bg-accent-500/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.22em] text-accent-500;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-full bg-brand-950 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-brand-950/20 hover:-translate-y-0.5 hover:bg-brand-900;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-full border border-charcoal-200 bg-white px-6 py-3 text-sm font-semibold text-charcoal-900 hover:-translate-y-0.5 hover:border-brand-900 hover:text-brand-900;
+  }
+
+  .btn-ghost-dark {
+    @apply inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-6 py-3 text-sm font-semibold text-white hover:-translate-y-0.5 hover:border-accent-400/60 hover:bg-white/10;
+  }
+
+  .field-input {
+    @apply w-full rounded-2xl border border-charcoal-200 bg-white px-4 py-3.5 text-sm text-charcoal-900 placeholder:text-charcoal-800/55 focus:border-brand-700 focus:ring-2 focus:ring-brand-700/15;
+  }
+
+  .section-break {
+    @apply absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-charcoal-200/70 to-transparent;
+  }
+}

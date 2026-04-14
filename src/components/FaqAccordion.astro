@@ -1,0 +1,23 @@
+---
+import type { FaqItem } from '@/types/content';
+
+interface Props {
+  items: FaqItem[];
+}
+
+const { items } = Astro.props;
+---
+
+<div class="space-y-4">
+  {items.map((item) => (
+    <details class="card-surface group p-6">
+      <summary class="flex cursor-pointer list-none items-center justify-between gap-4 text-left text-lg font-semibold tracking-tight text-brand-950">
+        <span>{item.question}</span>
+        <span class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-mist-100 text-brand-950 group-open:rotate-45">
+          +
+        </span>
+      </summary>
+      <p class="mt-4 max-w-3xl text-sm leading-7 text-charcoal-800">{item.answer}</p>
+    </details>
+  ))}
+</div>

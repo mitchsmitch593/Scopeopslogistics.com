@@ -1,0 +1,25 @@
+{
+  "name": "warehousing",
+  "version": "1.0.0",
+  "description": "Astro marketing site for a warehouse operations and logistics services company.",
+  "scripts": {
+    "dev": "ASTRO_TELEMETRY_DISABLED=1 astro dev",
+    "start": "ASTRO_TELEMETRY_DISABLED=1 astro dev",
+    "build": "ASTRO_TELEMETRY_DISABLED=1 astro build",
+    "preview": "ASTRO_TELEMETRY_DISABLED=1 astro preview",
+    "check": "tsc --noEmit"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "@astrojs/sitemap": "^3.7.2",
+    "@fontsource-variable/newsreader": "^5.2.10",
+    "@fontsource-variable/public-sans": "^5.2.7",
+    "@tailwindcss/vite": "^4.2.2",
+    "astro": "^6.1.0",
+    "tailwindcss": "^4.2.2",
+    "typescript": "^5.9.3"
+  }
+}

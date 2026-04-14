@@ -1,0 +1,62 @@
+---
+import { contactFormFields } from '@/data/forms';
+
+// The field schema is portable by design so the same form definition can later power
+// a Next.js contact route, a hosted forms provider, or a CRM integration.
+---
+
+<div class="card-surface p-8 lg:p-10">
+  <form
+    class="grid gap-5"
+    name="contact-request"
+    method="post"
+    action="/thank-you"
+    data-form-name="contact-request"
+    data-netlify="true"
+    netlify-honeypot="bot-field"
+  >
+    <input type="hidden" name="form-name" value="contact-request" />
+    <p class="hidden" aria-hidden="true">
+      <label>
+        Do not fill this out if you are human:
+        <input name="bot-field" tabindex="-1" autocomplete="off" />
+      </label>
+    </p>
+    {contactFormFields.map((field) => (
+      <div>
+        <label for={field.id} class="mb-2 block text-sm font-semibold text-brand-950">
+          {field.label}
+          {field.required && <span class="ml-1 text-accent-500">*</span>}
+        </label>
+
+        {field.type === 'textarea' ? (
+          <textarea
+            id={field.id}
+            name={field.name}
+            class="field-input min-h-40 resize-y"
+            placeholder={field.placeholder}
+            required={field.required}
+            autocomplete={field.autocomplete}
+          ></textarea>
+        ) : (
+          <input
+            id={field.id}
+            name={field.name}
+            type={field.type}
+            class="field-input"
+            placeholder={field.placeholder}
+            required={field.required}
+            autocomplete={field.autocomplete}
+          />
+        )}
+      </div>
+    ))}
+
+    <div>
+      <button type="submit" class="btn-primary w-full sm:w-auto">
+        Send Message
+      </button>
+    </div>
+  </form>
+
+</div>

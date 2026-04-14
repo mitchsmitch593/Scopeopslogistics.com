@@ -1,0 +1,66 @@
+---
+import CTABanner from '@/components/CTABanner.astro';
+import Hero from '@/components/Hero.astro';
+import Section from '@/components/Section.astro';
+import SectionIntro from '@/components/SectionIntro.astro';
+import ServiceCard from '@/components/ServiceCard.astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { services } from '@/data/services';
+---
+
+<BaseLayout
+  title="Warehouse Services"
+  description="Container unloading, fulfillment overflow, kitting, reverse logistics, rework, and scoped warehouse support priced by the job."
+>
+  <Hero
+    eyebrow="Services"
+    title="Warehouse help for jobs that need to get done."
+    description="These services are built for teams that need extra capacity to clear work, reduce pressure, and keep the warehouse moving."
+    primaryCta={{ label: 'Request a Quote', href: '/request-a-quote' }}
+    secondaryCta={{ label: 'How It Works', href: '/how-it-works' }}
+    compact
+    panelTitle="Quoted by the job"
+    panelBody="Bring the project, surge, or backlog. We review the work, define the scope, and quote it around what the job actually requires."
+  />
+
+  <Section>
+    <SectionIntro
+      eyebrow="Service lines"
+      title="Built for overflow, backlog, and project work."
+      description="If the warehouse work is clear and it needs to get done, it is likely a strong fit for this model."
+    />
+    <div class="mt-10 grid gap-6 lg:grid-cols-2">
+      {services.map((service) => <ServiceCard service={service} />)}
+    </div>
+  </Section>
+
+  <Section surface="mist">
+    <div class="grid gap-6 lg:grid-cols-3">
+      <div class="card-surface p-7">
+        <p class="text-xs font-semibold uppercase tracking-[0.22em] text-accent-500">Use this model when</p>
+        <p class="mt-4 text-sm leading-7 text-charcoal-900">
+          The work is clear, important, and hard to absorb with the team you already have on the floor.
+        </p>
+      </div>
+      <div class="card-surface p-7">
+        <p class="text-xs font-semibold uppercase tracking-[0.22em] text-accent-500">Quoted by the job</p>
+        <p class="mt-4 text-sm leading-7 text-charcoal-900">
+          Pricing is tied to the work itself, with a clear scope and a clear path to getting it done.
+        </p>
+      </div>
+      <div class="card-surface p-7">
+        <p class="text-xs font-semibold uppercase tracking-[0.22em] text-accent-500">Best fit for</p>
+        <p class="mt-4 text-sm leading-7 text-charcoal-900">
+          Warehouse and supply-chain teams that need fast relief and a solution they can explain clearly inside the business.
+        </p>
+      </div>
+    </div>
+  </Section>
+
+  <Section>
+    <CTABanner
+      title="Need help with a specific warehouse job?"
+      description="Send the type of work, estimated volume, timeline, and location. The clearer the scope, the faster the quote process moves."
+    />
+  </Section>
+</BaseLayout>

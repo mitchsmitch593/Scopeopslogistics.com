@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900" fill="none">
+  <defs>
+    <linearGradient id="floor" x1="700" y1="430" x2="700" y2="900" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#E1E7EE"/>
+      <stop offset="1" stop-color="#C3CEDA"/>
+    </linearGradient>
+    <linearGradient id="rack" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#1A2433"/>
+      <stop offset="1" stop-color="#303D51"/>
+    </linearGradient>
+  </defs>
+  <rect width="1400" height="900" fill="#EEF3F8"/>
+  <path d="M0 470L574 340H826L1400 470V900H0V470Z" fill="url(#floor)"/>
+  <path d="M286 104H436V900H286V104Z" fill="url(#rack)"/>
+  <path d="M964 104H1114V900H964V104Z" fill="url(#rack)"/>
+  <path d="M520 64H880V900H520V64Z" fill="#253041"/>
+  <rect x="330" y="150" width="70" height="680" fill="#5DD0C5"/>
+  <rect x="1000" y="150" width="70" height="680" fill="#5DD0C5"/>
+  <rect x="562" y="112" width="276" height="700" fill="#59C9BE"/>
+  <g fill="#C99552">
+    <rect x="172" y="174" width="106" height="108" rx="10"/>
+    <rect x="160" y="334" width="120" height="120" rx="10"/>
+    <rect x="168" y="512" width="106" height="108" rx="10"/>
+    <rect x="1118" y="174" width="106" height="108" rx="10"/>
+    <rect x="1120" y="334" width="120" height="120" rx="10"/>
+    <rect x="1126" y="512" width="106" height="108" rx="10"/>
+    <rect x="610" y="136" width="178" height="114" rx="12"/>
+    <rect x="602" y="304" width="194" height="124" rx="12"/>
+    <rect x="610" y="486" width="178" height="114" rx="12"/>
+  </g>
+  <g fill="#F06B2D">
+    <rect x="606" y="612" width="190" height="88" rx="18"/>
+    <rect x="660" y="528" width="82" height="102" rx="18"/>
+  </g>
+  <g fill="#161E2A">
+    <rect x="584" y="702" width="234" height="46" rx="18"/>
+    <rect x="652" y="574" width="98" height="38" rx="10"/>
+  </g>
+  <rect x="852" y="622" width="144" height="22" rx="11" fill="#FFD25E"/>
+  <rect x="402" y="622" width="144" height="22" rx="11" fill="#FFD25E"/>
+  <rect x="614" y="744" width="48" height="48" rx="24" fill="#1A2433"/>
+  <rect x="742" y="744" width="48" height="48" rx="24" fill="#1A2433"/>
+  <path d="M700 0L756 64H644L700 0Z" fill="#DCE7F1"/>
+  <path d="M700 168L730 230H670L700 168Z" fill="#DCE7F1" fill-opacity=".8"/>
+  <rect x="74" y="102" width="1252" height="706" rx="32" stroke="#FFFFFF" stroke-opacity=".62" stroke-width="8"/>
+</svg>

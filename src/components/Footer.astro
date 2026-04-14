@@ -1,0 +1,75 @@
+---
+import BrandLogo from '@/components/BrandLogo.astro';
+import { navigationItems, primaryCta } from '@/data/navigation';
+import { services } from '@/data/services';
+import { contactMethods, siteConfig } from '@/data/site';
+
+const footerServices = services.slice(0, 4);
+---
+
+<footer class="border-t border-white/10 bg-brand-950 text-white">
+  <div class="container-shell py-16">
+    <div class="grid gap-10 lg:grid-cols-[minmax(0,1.2fr)_0.8fr_0.8fr_0.9fr]">
+      <div>
+        <div class="flex items-center gap-3">
+          <BrandLogo variant="dark" />
+        </div>
+        <p class="mt-5 max-w-md text-sm leading-7 text-white/75">
+          Outcome-driven warehouse execution for overflow, backlog, special projects, and defined operational pressure
+          points. Clients pay for the work to get done, not just for hours on the floor.
+        </p>
+        <a href={primaryCta.href} class="btn-primary mt-6">
+          {primaryCta.label}
+        </a>
+      </div>
+
+      <div>
+        <h2 class="text-sm font-semibold uppercase tracking-[0.22em] text-accent-400">Navigation</h2>
+        <ul class="mt-5 space-y-3 text-sm text-white/75">
+          {navigationItems.map((item) => (
+            <li>
+              <a href={item.href} class="hover:text-white">
+                {item.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="text-sm font-semibold uppercase tracking-[0.22em] text-accent-400">Core Services</h2>
+        <ul class="mt-5 space-y-3 text-sm text-white/75">
+          {footerServices.map((service) => (
+            <li>{service.title}</li>
+          ))}
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="text-sm font-semibold uppercase tracking-[0.22em] text-accent-400">Contact</h2>
+        <ul class="mt-5 space-y-4 text-sm text-white/75">
+          {contactMethods.map((item) => (
+            <li>
+              <p class="font-semibold text-white">{item.label}</p>
+              {item.href ? (
+                <a href={item.href} class="mt-1 inline-block hover:text-white">
+                  {item.value}
+                </a>
+              ) : (
+                <p class="mt-1">{item.value}</p>
+              )}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-12 flex flex-col gap-3 border-t border-white/10 pt-6 text-sm text-white/55 sm:flex-row sm:items-center sm:justify-between">
+      <p>&copy; {new Date().getFullYear()} {siteConfig.name}. All rights reserved.</p>
+      <div class="flex flex-wrap gap-4">
+        <a href="/privacy" class="hover:text-white">Privacy Policy</a>
+        <p>Project-based warehouse support for overflow, backlog, and special projects.</p>
+      </div>
+    </div>
+  </div>
+</footer>

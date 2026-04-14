@@ -1,0 +1,19 @@
+---
+import type { Industry } from '@/types/content';
+
+interface Props {
+  industry: Industry;
+}
+
+const { industry } = Astro.props;
+---
+
+<article class="card-surface h-full p-7">
+  <p class="text-xs font-semibold uppercase tracking-[0.22em] text-accent-500">Industry fit</p>
+  <h3 class="mt-4 text-2xl font-semibold tracking-tight text-brand-950">{industry.title}</h3>
+  <p class="mt-4 text-sm leading-7 text-charcoal-800">{industry.description}</p>
+  <div class="mt-6 rounded-2xl bg-mist-100 px-5 py-4">
+    <p class="text-xs font-semibold uppercase tracking-[0.2em] text-charcoal-800">Where this model helps</p>
+    <p class="mt-2 text-sm leading-7 text-charcoal-900">{industry.fit}</p>
+  </div>
+</article>

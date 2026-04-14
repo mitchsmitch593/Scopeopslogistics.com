@@ -1,0 +1,115 @@
+---
+import CTABanner from '@/components/CTABanner.astro';
+import Hero from '@/components/Hero.astro';
+import Section from '@/components/Section.astro';
+import SectionIntro from '@/components/SectionIntro.astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { services } from '@/data/services';
+import { siteConfig } from '@/data/site';
+
+export function getStaticPaths() {
+  return services.map((service) => ({
+    params: { slug: service.slug },
+    props: { service },
+  }));
+}
+
+const { service } = Astro.props;
+
+const relatedServices = services.filter((item) => item.slug !== service.slug).slice(0, 3);
+const serviceSchema = {
+  '@type': 'Service',
+  '@id': `${siteConfig.siteUrl}/services/${service.slug}/#service`,
+  name: service.title,
+  serviceType: service.title,
+  description: service.seoDescription ?? service.summary,
+  provider: { '@id': `${siteConfig.siteUrl}/#organization` },
+  areaServed: siteConfig.serviceArea,
+  url: `${siteConfig.siteUrl}/services/${service.slug}/`,
+};
+---
+
+<BaseLayout
+  title={service.seoTitle ?? service.title}
+  description={service.seoDescription ?? service.summary}
+  schema={serviceSchema}
+>
+  <Hero
+    eyebrow="Warehouse service"
+    title={`${service.title} for warehouse teams that need the work completed.`}
+    description={`${service.summary} ScopeOps Logistics reviews the work, clarifies the volume and timing, and quotes the job based on scope instead of hourly labor.`}
+    primaryCta={{ label: 'Get a Quote', href: '/request-a-quote' }}
+    secondaryCta={{ label: 'View All Services', href: '/services' }}
+    compact
+    panelTitle="Quoted around the job"
+    panelBody="The strongest fit is a defined warehouse task with a clear volume, timeline, location, and operational outcome."
+  />
+
+  <Section>
+    <div class="grid gap-8 lg:grid-cols-[minmax(0,1fr)_24rem]">
+      <div>
+        <SectionIntro
+          eyebrow="Service details"
+          title={`When ${service.title.toLowerCase()} support makes sense.`}
+          description={service.benefit}
+        />
+
+        <div class="mt-8 card-surface p-8">
+          <h2 class="text-2xl font-semibold tracking-tight text-brand-950">Common use cases</h2>
+          <ul class="mt-6 grid gap-4 sm:grid-cols-2">
+            {service.useCases.map((useCase) => (
+              <li class="rounded-2xl bg-mist-100 p-5 text-sm leading-7 text-charcoal-900">
+                {useCase}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      <aside class="space-y-6">
+        <div class="card-dark p-8">
+          <p class="text-xs font-semibold uppercase tracking-[0.22em] text-accent-400">Best next step</p>
+          <p class="mt-4 text-sm leading-7 text-white/80">
+            Send the work type, estimated volume, needed-by date, and facility location so the job can be reviewed quickly.
+          </p>
+          <a href="/request-a-quote" class="btn-primary mt-6 !bg-accent-500 !text-brand-950 hover:!bg-accent-400">
+            Request a Quote
+          </a>
+        </div>
+
+        <div class="card-surface p-8">
+          <p class="text-xs font-semibold uppercase tracking-[0.22em] text-charcoal-800">Why this is not temp staffing</p>
+          <p class="mt-4 text-sm leading-7 text-charcoal-900">
+            ScopeOps focuses on completing defined warehouse work. The engagement starts with the task and outcome, not an open-ended hourly headcount request.
+          </p>
+        </div>
+      </aside>
+    </div>
+  </Section>
+
+  <Section surface="mist">
+    <SectionIntro
+      eyebrow="Related services"
+      title="Other scoped warehouse support options."
+      description="These pages create focused search entry points while still keeping the site clear and easy to navigate."
+    />
+    <div class="mt-10 grid gap-6 lg:grid-cols-3">
+      {relatedServices.map((item) => (
+        <article class="card-surface p-7">
+          <h2 class="text-xl font-semibold tracking-tight text-brand-950">{item.title}</h2>
+          <p class="mt-3 text-sm leading-7 text-charcoal-800">{item.summary}</p>
+          <a href={`/services/${item.slug}`} class="mt-6 inline-flex text-sm font-semibold text-brand-950 hover:text-accent-500">
+            View service
+          </a>
+        </article>
+      ))}
+    </div>
+  </Section>
+
+  <Section>
+    <CTABanner
+      title={`Need ${service.title.toLowerCase()} help?`}
+      description="Tell ScopeOps Logistics what needs to get done, where the work is happening, and when you need support."
+    />
+  </Section>
+</BaseLayout>

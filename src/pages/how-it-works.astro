@@ -1,0 +1,87 @@
+---
+import CTABanner from '@/components/CTABanner.astro';
+import Hero from '@/components/Hero.astro';
+import ProcessSteps from '@/components/ProcessSteps.astro';
+import Section from '@/components/Section.astro';
+import SectionIntro from '@/components/SectionIntro.astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { processSteps } from '@/data/process';
+import { siteConfig } from '@/data/site';
+---
+
+<BaseLayout
+  title="How It Works"
+  description="Learn how the warehouse quote and work process moves from scope to completion without disrupting your team."
+>
+  <Hero
+    eyebrow="How it works"
+    title="A simple path from warehouse problem to completed work."
+    description="The process is built to be straightforward so you can move from pressure on the floor to a clear next step without adding confusion or slowing your team down."
+    primaryCta={{ label: 'Request a Quote', href: '/request-a-quote' }}
+    secondaryCta={{ label: 'Contact Us', href: '/contact' }}
+    compact
+    panelTitle="Fast and easy to follow"
+    panelBody="Most teams already know what needs help. We turn that into a clear scope, a clear quote, and a clear next step."
+  />
+
+  <Section>
+    <SectionIntro
+      eyebrow="The process"
+      title="A five-step path from warehouse pressure to completed work."
+      description="Share the work that needs help, review the scope, receive pricing, and move forward without turning the problem into a hiring project."
+    />
+    <div class="mt-10">
+      <ProcessSteps steps={processSteps} />
+    </div>
+  </Section>
+
+  <Section surface="mist">
+    <div class="grid gap-8 lg:grid-cols-[minmax(0,1fr)_24rem]">
+      <SectionIntro
+        eyebrow="What drives the quote"
+        title="The quote is based on the work, not on rented labor."
+        description="Pricing stays tied to the job itself, including the volume, timing, work type, and site conditions that affect the scope."
+      />
+      <div class="card-surface p-8">
+        <ul class="space-y-4">
+          {siteConfig.quoteFactors.map((factor) => (
+            <li class="flex gap-3 border-b border-charcoal-100 pb-4 last:border-none last:pb-0">
+              <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent-500"></span>
+              <span class="text-sm leading-7 text-charcoal-900">{factor}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </Section>
+
+  <Section>
+    <div class="grid gap-6 lg:grid-cols-3">
+      <div class="card-surface p-7">
+        <p class="text-xs font-semibold uppercase tracking-[0.22em] text-accent-500">Simple to explain internally</p>
+        <p class="mt-4 text-sm leading-7 text-charcoal-900">
+          This is easier to explain internally because it solves a clear workload problem with a clear plan and a clear price.
+        </p>
+      </div>
+      <div class="card-surface p-7">
+        <p class="text-xs font-semibold uppercase tracking-[0.22em] text-accent-500">Fast to deploy</p>
+        <p class="mt-4 text-sm leading-7 text-charcoal-900">
+          A clear warehouse job usually leads to a faster conversation and a faster next step.
+        </p>
+      </div>
+      <div class="card-surface p-7">
+        <p class="text-xs font-semibold uppercase tracking-[0.22em] text-accent-500">Focused on results</p>
+        <p class="mt-4 text-sm leading-7 text-charcoal-900">
+          The outcome is completed warehouse work and less pressure on your team.
+        </p>
+      </div>
+    </div>
+  </Section>
+
+  <Section>
+    <CTABanner
+      title="Have a warehouse project, surge, or backlog to scope?"
+      description="Send over the job details and get the quote process started with the information needed to move quickly."
+    />
+  </Section>
+</BaseLayout>

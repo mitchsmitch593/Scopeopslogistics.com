@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1100" viewBox="0 0 1600 1100" fill="none">
+  <defs>
+    <linearGradient id="sky" x1="200" y1="0" x2="1400" y2="740" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#EEF4FB"/>
+      <stop offset="1" stop-color="#DDE7F2"/>
+    </linearGradient>
+    <linearGradient id="building" x1="360" y1="170" x2="1260" y2="780" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FAFCFE"/>
+      <stop offset="1" stop-color="#D8E0EA"/>
+    </linearGradient>
+    <linearGradient id="shadow" x1="0" y1="670" x2="0" y2="1020" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#A7B4C3"/>
+      <stop offset="1" stop-color="#78879A"/>
+    </linearGradient>
+    <linearGradient id="asphalt" x1="800" y1="760" x2="800" y2="1100" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#CDD5DE"/>
+      <stop offset="1" stop-color="#9AA8B8"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="1100" fill="url(#sky)"/>
+  <circle cx="1338" cy="152" r="100" fill="#FFFFFF" fill-opacity=".56"/>
+  <path d="M0 770L1600 660V1100H0V770Z" fill="url(#asphalt)"/>
+  <path d="M320 184H1218V764H320V184Z" fill="url(#building)"/>
+  <path d="M320 184H1218V250H320V184Z" fill="#F6F9FC"/>
+  <path d="M368 252H1174V700H368V252Z" fill="#D6DEE8"/>
+  <path d="M422 330H700V704H422V330Z" fill="#273243"/>
+  <path d="M760 330H1038V704H760V330Z" fill="#273243"/>
+  <path d="M1092 330H1160V704H1092V330Z" fill="#566377"/>
+  <path d="M422 330H700V374H422V330Z" fill="#1A2230"/>
+  <path d="M760 330H1038V374H760V330Z" fill="#1A2230"/>
+  <rect x="252" y="240" width="72" height="524" fill="#E8EEF5"/>
+  <rect x="1230" y="240" width="58" height="524" fill="#CAD4E0"/>
+  <path d="M252 764H1288V796H252V764Z" fill="url(#shadow)"/>
+  <rect x="240" y="710" width="18" height="170" rx="9" fill="#F0B432"/>
+  <rect x="280" y="710" width="18" height="170" rx="9" fill="#F0B432"/>
+  <rect x="1128" y="710" width="18" height="170" rx="9" fill="#F0B432"/>
+  <rect x="1168" y="710" width="18" height="170" rx="9" fill="#F0B432"/>
+  <rect x="240" y="760" width="18" height="26" fill="#152033"/>
+  <rect x="280" y="760" width="18" height="26" fill="#152033"/>
+  <rect x="1128" y="760" width="18" height="26" fill="#152033"/>
+  <rect x="1168" y="760" width="18" height="26" fill="#152033"/>
+  <rect x="580" y="742" width="112" height="18" rx="9" fill="#7A889B"/>
+  <rect x="522" y="760" width="228" height="20" rx="10" fill="#93A0B2"/>
+  <rect x="530" y="780" width="212" height="14" rx="7" fill="#78879A"/>
+  <path d="M1260 270H1404V738H1260V270Z" fill="#C7D0DC"/>
+  <path d="M1260 270H1404V316H1260V270Z" fill="#AAB7C7"/>
+  <path d="M1302 620H1380V738H1302V620Z" fill="#B5652A"/>
+  <path d="M1302 590H1380V614H1302V590Z" fill="#8D471B"/>
+  <path d="M1284 784H1434V806H1284V784Z" fill="#7D8796"/>
+  <path d="M1028 218H1152L1110 160H986L1028 218Z" fill="#B8C4D2"/>
+  <path d="M988 160H1110V142H988V160Z" fill="#94A3B5"/>
+</svg>

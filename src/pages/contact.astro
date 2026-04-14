@@ -1,0 +1,81 @@
+---
+import ContactForm from '@/components/ContactForm.astro';
+import Hero from '@/components/Hero.astro';
+import Section from '@/components/Section.astro';
+import SectionIntro from '@/components/SectionIntro.astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { contactMethods, siteConfig } from '@/data/site';
+---
+
+<BaseLayout
+  title="Contact"
+  description="Contact the team to discuss warehouse project support, response times, and quote requests."
+>
+  <Hero
+    eyebrow="Contact"
+    title="Talk through your warehouse need before you request a quote."
+    description="Use this page if you want to talk through timing, service area, or whether the job makes sense for this model before you send a request."
+    primaryCta={{ label: 'Request a Quote', href: '/request-a-quote' }}
+    secondaryCta={{ label: 'Email Us', href: `mailto:${siteConfig.generalEmail}` }}
+    compact
+    panelTitle="A quick way to start"
+    panelBody="The fastest conversations start with three basics: what needs help, where it is happening, and how soon you need relief."
+  />
+
+  <Section>
+    <div class="grid gap-8 xl:grid-cols-[minmax(0,1fr)_22rem]">
+      <div>
+        <SectionIntro
+          eyebrow="Get in touch"
+          title="Contact form"
+          description="Use this form for general outreach, early conversations, and questions about the kind of warehouse work we handle."
+        />
+        <div class="mt-8">
+          <ContactForm />
+        </div>
+      </div>
+
+      <aside class="space-y-6">
+        <div class="card-surface p-8">
+          <p class="text-xs font-semibold uppercase tracking-[0.22em] text-accent-500">Business contact</p>
+          <dl class="mt-5 space-y-5">
+            {contactMethods.map((item) => (
+              <div>
+                <dt class="text-sm font-semibold text-brand-950">{item.label}</dt>
+                <dd class="mt-1 text-sm leading-7 text-charcoal-800">
+                  {item.href ? (
+                    <a href={item.href} class="hover:text-brand-950">
+                      {item.value}
+                    </a>
+                  ) : (
+                    item.value
+                  )}
+                </dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+
+        <div class="card-dark p-8">
+          <p class="text-xs font-semibold uppercase tracking-[0.22em] text-accent-400">When to use this page</p>
+          <p class="mt-4 text-sm leading-7 text-white/80">
+            Use the quote request page when the work is clear and you want pricing. Use this page when you want to talk through the job, the timing, the service area, or the type of help you need.
+          </p>
+        </div>
+
+        <div class="card-surface overflow-hidden">
+          <div class="border-b border-charcoal-100 px-8 py-5">
+            <p class="text-xs font-semibold uppercase tracking-[0.22em] text-charcoal-800">Service area and response</p>
+          </div>
+          <div class="bg-[linear-gradient(135deg,#f5f7fb_0%,#e8edf4_100%)] p-8">
+            <div class="space-y-4 text-sm leading-7 text-charcoal-800">
+              <p>Service area: {contactMethods.find((item) => item.label === 'Service Area')?.value}</p>
+              <p>Response time: {contactMethods.find((item) => item.label === 'Response Time')?.value}</p>
+              <p>Best for: warehouse jobs with a clear scope, overflow volume, backlog cleanup, and special projects.</p>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </Section>
+</BaseLayout>

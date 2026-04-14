@@ -1,0 +1,99 @@
+---
+import Footer from '@/components/Footer.astro';
+import Header from '@/components/Header.astro';
+import { siteConfig } from '@/data/site';
+import '@/styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  noIndex?: boolean;
+  schema?: Record<string, unknown> | Record<string, unknown>[];
+}
+
+const {
+  title = siteConfig.defaultTitle,
+  description = siteConfig.defaultDescription,
+  image = '/og-card.svg',
+  noIndex = false,
+  schema,
+} = Astro.props;
+
+const pageTitle = title.includes(siteConfig.shortName)
+  ? title
+  : siteConfig.titleTemplate.replace('%s', title);
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site ?? siteConfig.siteUrl);
+const ogImageUrl = new URL(image, Astro.site ?? siteConfig.siteUrl);
+
+const baseSchema = [
+  {
+    '@type': 'Organization',
+    '@id': `${siteConfig.siteUrl}/#organization`,
+    name: siteConfig.name,
+    url: siteConfig.siteUrl,
+    email: siteConfig.contactEmail,
+    telephone: siteConfig.contactPhone,
+    areaServed: siteConfig.serviceArea,
+    description: siteConfig.defaultDescription,
+    logo: new URL('/favicon.svg', siteConfig.siteUrl).toString(),
+  },
+  {
+    '@type': 'WebSite',
+    '@id': `${siteConfig.siteUrl}/#website`,
+    url: siteConfig.siteUrl,
+    name: siteConfig.name,
+    publisher: { '@id': `${siteConfig.siteUrl}/#organization` },
+  },
+];
+
+const schemaItems = Array.isArray(schema) ? schema : schema ? [schema] : [];
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [...baseSchema, ...schemaItems],
+};
+---
+
+<!doctype html>
+<html lang="en" class="bg-white">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="theme-color" content="#09111d" />
+    <link rel="canonical" href={canonicalUrl.toString()} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={siteConfig.name} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl.toString()} />
+    <meta property="og:image" content={ogImageUrl.toString()} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageUrl.toString()} />
+
+    {noIndex && <meta name="robots" content="noindex,nofollow" />}
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </head>
+  <body class="min-h-screen">
+    <a
+      href="#main-content"
+      class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-full focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-brand-950"
+    >
+      Skip to content
+    </a>
+    <div class="relative isolate overflow-hidden">
+      <Header currentPath={Astro.url.pathname} />
+      <main id="main-content">
+        <slot />
+      </main>
+      <Footer />
+    </div>
+  </body>
+</html>

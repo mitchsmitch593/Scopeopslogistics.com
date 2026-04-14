@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">ScopeOps Logistics</title>
+  <desc id="desc">Dark square mark with warehouse-inspired initials.</desc>
+  <rect width="64" height="64" rx="16" fill="#09111d" />
+  <path d="M18 22h28v8H18zM18 34h16v8H18zM38 34h8v8h-8z" fill="#d19a2a" />
+  <path d="M18 18h28v4H18zM18 46h28v4H18z" fill="#ffffff" opacity=".85" />
+</svg>

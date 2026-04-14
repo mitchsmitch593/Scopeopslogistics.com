@@ -1,0 +1,44 @@
+---
+import { siteConfig } from '@/data/site';
+---
+
+<div class="grid gap-8 lg:grid-cols-[minmax(0,1fr)_24rem]">
+  <div class="card-dark overflow-hidden p-8 lg:p-10">
+    <p class="eyebrow !border-white/15 !bg-white/5 !text-accent-400">How This Model Works</p>
+    <h2 class="mt-6 font-serif text-3xl font-medium tracking-tight text-balance sm:text-4xl">
+      Warehouse work scoped, quoted, and completed around the job.
+    </h2>
+    <p class="mt-5 max-w-2xl text-base leading-8 text-white/80">
+      This model is built for businesses that need warehouse work handled with a clear scope, a clear quote, and a clear plan to get it done.
+      It also gives buyers a cleaner alternative to open-ended hourly labor by keeping the focus on the work itself and the result that needs to be delivered.
+    </p>
+    <div class="mt-8 grid gap-4 sm:grid-cols-2">
+      <div class="rounded-[1.5rem] border border-white/10 bg-white/5 p-5">
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-accent-400">What this is</p>
+        <p class="mt-3 text-sm leading-7 text-white/85">
+          On-demand warehouse support for overflow, backlog cleanup, surge relief, and project work.
+        </p>
+      </div>
+      <div class="rounded-[1.5rem] border border-white/10 bg-white/5 p-5">
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-accent-400">Why it is different</p>
+        <p class="mt-3 text-sm leading-7 text-white/85">
+          The focus stays on getting the work done, with pricing tied to the job instead of open-ended hourly labor.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-surface p-8">
+    <p class="text-xs font-semibold uppercase tracking-[0.22em] text-charcoal-800">Why companies use it</p>
+    <ul class="mt-5 space-y-4">
+      {siteConfig.differentiators.map((item) => (
+        <li class="flex gap-3 border-b border-charcoal-100 pb-4 last:border-none last:pb-0">
+          <span class="mt-1 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-accent-500/15 text-xs font-bold text-accent-500">
+            +
+          </span>
+          <span class="text-sm leading-7 text-charcoal-900">{item}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+</div>

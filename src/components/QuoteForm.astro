@@ -1,0 +1,87 @@
+---
+import { quoteFormFields } from '@/data/forms';
+import { siteConfig } from '@/data/site';
+
+// Keeping field configuration separate from the Astro template makes this form straightforward
+// to move into future React/Next.js route handlers or API-driven workflows.
+---
+
+<div class="card-surface p-8 lg:p-10">
+  <form
+    class="grid gap-5 sm:grid-cols-2"
+    name="quote-request"
+    method="post"
+    action="/thank-you"
+    data-form-name="quote-request"
+    data-netlify="true"
+    netlify-honeypot="bot-field"
+  >
+    <input type="hidden" name="form-name" value="quote-request" />
+    <p class="hidden" aria-hidden="true">
+      <label>
+        Do not fill this out if you are human:
+        <input name="bot-field" tabindex="-1" autocomplete="off" />
+      </label>
+    </p>
+    {quoteFormFields.map((field) => (
+      <div class:list={[field.type === 'textarea' && 'sm:col-span-2']}>
+        <label for={field.id} class="mb-2 block text-sm font-semibold text-brand-950">
+          {field.label}
+          {field.required && <span class="ml-1 text-accent-500">*</span>}
+        </label>
+
+        {field.type === 'select' ? (
+          <select
+            id={field.id}
+            name={field.name}
+            class="field-input"
+            required={field.required}
+            aria-describedby={field.helpText ? `${field.id}-help` : undefined}
+          >
+            <option value="">Select one</option>
+            {field.options?.map((option) => (
+              <option value={option.value}>{option.label}</option>
+            ))}
+          </select>
+        ) : field.type === 'textarea' ? (
+          <textarea
+            id={field.id}
+            name={field.name}
+            class="field-input min-h-36 resize-y"
+            placeholder={field.placeholder}
+            required={field.required}
+            aria-describedby={field.helpText ? `${field.id}-help` : undefined}
+          ></textarea>
+        ) : (
+          <input
+            id={field.id}
+            name={field.name}
+            type={field.type}
+            class="field-input"
+            placeholder={field.placeholder}
+            required={field.required}
+            autocomplete={field.autocomplete}
+            aria-describedby={field.helpText ? `${field.id}-help` : undefined}
+          />
+        )}
+
+        {field.helpText && (
+          <p id={`${field.id}-help`} class="mt-2 text-xs leading-6 text-charcoal-800">
+            {field.helpText}
+          </p>
+        )}
+      </div>
+    ))}
+
+    <div class="sm:col-span-2">
+      <button type="submit" class="btn-primary w-full sm:w-auto">
+        Submit Quote Request
+      </button>
+    </div>
+  </form>
+
+  <p class="mt-4 text-xs leading-6 text-charcoal-800">
+    Recommended website inbox: <strong>{siteConfig.contactEmail}</strong>. Keep this as the quote-request inbox and use
+    {` ${siteConfig.generalEmail} `} for general contact. Keep the owner address private unless you want it published.
+  </p>
+</div>

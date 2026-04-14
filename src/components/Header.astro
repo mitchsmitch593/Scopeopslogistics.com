@@ -1,0 +1,44 @@
+---
+import BrandLogo from '@/components/BrandLogo.astro';
+import MobileNav from '@/components/MobileNav.astro';
+import { navigationItems, primaryCta } from '@/data/navigation';
+import { siteConfig } from '@/data/site';
+
+interface Props {
+  currentPath: string;
+}
+
+const { currentPath } = Astro.props;
+---
+
+<header class="sticky top-0 z-40 border-b border-white/70 bg-white/90 backdrop-blur-lg">
+  <div class="container-shell relative flex min-h-20 items-center justify-between gap-8">
+    <a href="/" class="flex items-center gap-3 text-brand-950">
+      <BrandLogo />
+    </a>
+
+    <nav class="hidden items-center gap-1 md:flex" aria-label="Primary navigation">
+      {navigationItems.map((item) => (
+        <a
+          href={item.href}
+          class:list={[
+            'rounded-full px-4 py-2 text-sm font-medium',
+            currentPath === item.href
+              ? 'bg-mist-100 text-brand-950'
+              : 'text-charcoal-800 hover:bg-mist-100 hover:text-brand-950',
+          ]}
+        >
+          {item.label}
+        </a>
+      ))}
+    </nav>
+
+    <div class="hidden md:block">
+      <a href={primaryCta.href} class="btn-primary">
+        {primaryCta.label}
+      </a>
+    </div>
+
+    <MobileNav currentPath={currentPath} />
+  </div>
+</header>

@@ -1,0 +1,35 @@
+---
+import CTABanner from '@/components/CTABanner.astro';
+import Hero from '@/components/Hero.astro';
+import Section from '@/components/Section.astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { siteConfig } from '@/data/site';
+---
+
+<BaseLayout
+  title="Thank You"
+  description="Thank you for contacting ScopeOps Logistics. Your warehouse operations request has been received."
+  noIndex
+>
+  <Hero
+    eyebrow="Request received"
+    title="Thank you. Your request has been sent."
+    description={`ScopeOps Logistics will review the information and respond as soon as possible. For urgent warehouse work, call ${siteConfig.contactPhone}.`}
+    primaryCta={{ label: 'Back to Home', href: '/' }}
+    secondaryCta={{ label: 'Call ScopeOps', href: `tel:${siteConfig.contactPhone.replace(/[^\d]/g, '')}` }}
+    compact
+    panelTitle="What happens next"
+    panelBody="We review the scope, volume, timing, work type, and location details so the next step is clear."
+  />
+
+  <Section>
+    <CTABanner
+      title="Need to send more details?"
+      description={`Email ${siteConfig.contactEmail} with any added context, photos, documents, timing notes, or volume estimates that help ScopeOps review the job.`}
+      primaryLabel="Email Quote Team"
+      primaryHref={`mailto:${siteConfig.contactEmail}`}
+      secondaryLabel="View Services"
+      secondaryHref="/services"
+    />
+  </Section>
+</BaseLayout>

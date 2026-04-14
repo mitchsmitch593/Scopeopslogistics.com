@@ -1,0 +1,52 @@
+---
+import { siteConfig } from '@/data/site';
+
+interface Props {
+  variant?: 'light' | 'dark';
+  showTagline?: boolean;
+}
+
+const { variant = 'light', showTagline = true } = Astro.props;
+
+const scopeClass = variant === 'light' ? 'text-brand-950' : 'text-white';
+const opsClass = variant === 'light' ? 'text-accent-500' : 'text-accent-400';
+const iconStrokeClass = variant === 'light' ? 'text-brand-800' : 'text-white/90';
+const taglineClass = variant === 'light' ? 'text-charcoal-800' : 'text-white/65';
+const logoScaleClass = showTagline ? 'text-[1.7rem] sm:text-[1.8rem]' : 'text-[1.55rem] sm:text-[1.7rem]';
+---
+
+<span class="inline-flex items-center gap-3">
+  <span class="flex flex-col leading-none">
+    <span class:list={['font-sans font-semibold tracking-[-0.04em]', logoScaleClass]}>
+      <span class={scopeClass}>Scope</span><span class={opsClass}>Ops</span>
+    </span>
+    {showTagline && (
+      <span class:list={['mt-1 pl-[0.08em] text-[10px] font-semibold uppercase tracking-[0.24em]', taglineClass]}>
+        {siteConfig.brandTagline}
+      </span>
+    )}
+  </span>
+
+  <svg
+    viewBox="0 0 44 44"
+    class:list={['h-10 w-10 shrink-0', iconStrokeClass]}
+    aria-hidden="true"
+    fill="none"
+  >
+    <g stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+      <path d="M10 15 22 11 34 15 22 19Z" />
+      <path d="M10 24 22 20 34 24 22 28Z" />
+      <path d="M10 33 22 29 34 33 22 37Z" />
+      <path d="M10 15v18" />
+      <path d="M22 19v18" />
+      <path d="M34 15v18" />
+    </g>
+    <path
+      d="M24 8h11m-5-5 5 5-5 5"
+      class={variant === 'light' ? 'stroke-accent-500' : 'stroke-accent-400'}
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2.4"
+    />
+  </svg>
+</span>

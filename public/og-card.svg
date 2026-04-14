@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#09111d" />
+      <stop offset="100%" stop-color="#1b2e4a" />
+    </linearGradient>
+    <radialGradient id="glow" cx="0.85" cy="0.1" r="0.8">
+      <stop offset="0%" stop-color="#d19a2a" stop-opacity="0.45" />
+      <stop offset="100%" stop-color="#d19a2a" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <rect width="1200" height="630" fill="url(#glow)" />
+  <rect x="70" y="72" width="1060" height="486" rx="32" fill="none" stroke="rgba(255,255,255,0.12)" />
+  <g transform="translate(110 124)">
+    <rect width="94" height="94" rx="22" fill="#ffffff" fill-opacity="0.08" />
+    <path d="M24 30h46v14H24zM24 50h28v14H24zM56 50h14v14H56z" fill="#d19a2a" />
+    <path d="M24 23h46v6H24zM24 72h46v6H24z" fill="#ffffff" fill-opacity="0.9" />
+  </g>
+  <text x="110" y="285" fill="#ffffff" font-family="'Public Sans', Arial, sans-serif" font-size="70" font-weight="700">
+    ScopeOps Logistics
+  </text>
+  <text x="110" y="358" fill="#ffffff" font-family="'Newsreader', Georgia, serif" font-size="44" font-weight="500">
+    Warehouse work completed on demand.
+  </text>
+  <text x="110" y="430" fill="#d8e0ea" font-family="'Public Sans', Arial, sans-serif" font-size="28">
+    Project-based warehouse execution for overflow, backlog, and special projects.
+  </text>
+</svg>

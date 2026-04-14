@@ -1,0 +1,58 @@
+---
+import CTABanner from '@/components/CTABanner.astro';
+import FaqAccordion from '@/components/FaqAccordion.astro';
+import Hero from '@/components/Hero.astro';
+import Section from '@/components/Section.astro';
+import SectionIntro from '@/components/SectionIntro.astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { faqs } from '@/data/faqs';
+import { siteConfig } from '@/data/site';
+
+const faqSchema = {
+  '@type': 'FAQPage',
+  '@id': `${siteConfig.siteUrl}/faq/#faq`,
+  mainEntity: faqs.map((item) => ({
+    '@type': 'Question',
+    name: item.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: item.answer,
+    },
+  })),
+};
+---
+
+<BaseLayout
+  title="FAQ"
+  description="Frequently asked questions about warehouse project support, quote structure, overflow fulfillment, reverse logistics, and how this model differs from temp labor."
+  schema={faqSchema}
+>
+  <Hero
+    eyebrow="FAQ"
+    title="Straight answers before you decide to move forward."
+    description="These are the questions warehouse teams usually ask before deciding whether this model makes sense for them."
+    primaryCta={{ label: 'Request a Quote', href: '/request-a-quote' }}
+    secondaryCta={{ label: 'Contact Us', href: '/contact' }}
+    compact
+    panelTitle="Quick clarity"
+    panelBody="This FAQ answers the staffing question directly and helps buyers decide whether their warehouse need makes sense for this model."
+  />
+
+  <Section>
+    <SectionIntro
+      eyebrow="Frequently asked questions"
+      title="Start with this: the model is built around the work itself."
+      description="The work is scoped, quoted, and completed around the job. That is why the model feels different from a standard hourly labor approach."
+    />
+    <div class="mt-10">
+      <FaqAccordion items={faqs} />
+    </div>
+  </Section>
+
+  <Section>
+    <CTABanner
+      title="Still have questions about timing or how quoting works?"
+      description="Reach out directly or send a request with the warehouse task, expected volume, and timeline so the next step is easy to define."
+    />
+  </Section>
+</BaseLayout>

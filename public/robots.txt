@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.scopeopslogistics.com/sitemap-index.xml
