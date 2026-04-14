@@ -38,6 +38,7 @@ export const siteConfig: SiteConfig = {
     'Timeline and urgency',
     'Type of warehouse work required',
     'Facility location and operating constraints',
+    'Safety, compliance, and insurance documentation requirements',
   ],
   aboutPrinciples: [
     'Practical execution over complicated staffing plans',

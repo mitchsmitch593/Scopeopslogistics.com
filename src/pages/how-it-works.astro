@@ -8,6 +8,7 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 import { processSteps } from '@/data/process';
 import { siteConfig } from '@/data/site';
 
+const phoneHref = `tel:${siteConfig.contactPhone.replace(/[^\d]/g, '')}`;
 const timelineItems = [
   {
     label: 'Hour 0',
@@ -68,6 +69,9 @@ const timelineItems = [
         The biggest cost of traditional labor is often the time your supervisors spend directing it. ScopeOps structures
         projects around coordinated execution, throughput, and safety alignment so your managers can stay focused on daily operations.
       </p>
+      <p class="mt-5 max-w-3xl rounded-2xl border border-white/10 bg-white/5 p-5 text-sm font-semibold leading-7 text-white/85">
+        A ScopeOps project lead acts as your single point of contact for throughput, safety alignment, and team conduct, so your managers can get back to higher-value facility operations.
+      </p>
     </div>
   </Section>
 
@@ -115,8 +119,10 @@ const timelineItems = [
     <CTABanner
       eyebrow="Stop the administrative headache"
       title="Get a quote today."
-      description={`Send the workload, volume, and timeline. ScopeOps will review the request and respond within one business day for most quote requests. Call ${siteConfig.contactPhone} if the bottleneck is urgent.`}
+      description="Send the workload, volume, and timeline. ScopeOps will review the request and respond within one business day for most quote requests. If the bottleneck is urgent, call directly from the button here."
       primaryLabel="Request a Project Quote"
+      secondaryLabel={`Call ${siteConfig.contactPhone}`}
+      secondaryHref={phoneHref}
     />
   </Section>
 </BaseLayout>

@@ -9,9 +9,9 @@ export const processSteps: ProcessStep[] = [
   },
   {
     step: '02',
-    title: 'Receive project pricing',
+    title: 'Fixed-price project quote',
     description:
-      'Get pricing tied to the project requirements. If the scope changes, the quote can be reviewed before work moves forward.',
+      'Get pricing tied to the specific task. Once the scope is confirmed, pricing stays tied to that agreed scope; if requirements change, the quote is reviewed before work proceeds.',
   },
   {
     step: '03',
