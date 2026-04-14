@@ -50,6 +50,7 @@ export interface Industry {
   description: string;
   fit: string;
   triggerService?: string;
+  impact?: string;
 }
 
 export interface FaqItem {
