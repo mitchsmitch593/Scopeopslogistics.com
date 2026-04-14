@@ -8,6 +8,8 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 import { faqs } from '@/data/faqs';
 import { siteConfig } from '@/data/site';
 
+const stripEmphasis = (value: string) => value.replace(/\*\*/g, '');
+
 const faqSchema = {
   '@type': 'FAQPage',
   '@id': `${siteConfig.siteUrl}/faq/#faq`,
@@ -16,10 +18,22 @@ const faqSchema = {
     name: item.question,
     acceptedAnswer: {
       '@type': 'Answer',
-      text: item.answer,
+      text: stripEmphasis(item.answer),
     },
   })),
 };
+
+const fitYes = [
+  'You have a specific warehouse task or backlog.',
+  'You want a project-based quote instead of open-ended hourly billing.',
+  'You do not want your supervisors managing every detail of temporary labor.',
+];
+
+const fitNo = [
+  'You need one person to stand at a station indefinitely.',
+  'You need general labor coverage with no defined goal.',
+  'You do not yet know the task, volume, location, or timeline.',
+];
 ---
 
 <BaseLayout
@@ -29,30 +43,63 @@ const faqSchema = {
 >
   <Hero
     eyebrow="FAQ"
-    title="Straight answers before you decide to move forward."
-    description="These are the questions warehouse teams usually ask before deciding whether this model makes sense for them."
-    primaryCta={{ label: 'Request a Quote', href: '/request-a-quote' }}
+    title="Straight answers for high-pressure warehouse operations."
+    description="You have a backlog; ScopeOps provides project-based warehouse support. No long-term contracts, no hourly fluff, just direct answers about how defined warehouse work gets scoped and moved forward."
+    primaryCta={{ label: 'Request a Project Quote', href: '/request-a-quote' }}
     secondaryCta={{ label: 'Contact Us', href: '/contact' }}
     compact
     panelTitle="Quick clarity"
-    panelBody="This FAQ answers the staffing question directly and helps buyers decide whether their warehouse need makes sense for this model."
+    panelBody="This page answers the questions managers ask when costs, supervision, safety, and timing matter."
   />
 
   <Section>
-    <SectionIntro
-      eyebrow="Frequently asked questions"
-      title="Start with this: the model is built around the work itself."
-      description="The work is scoped, quoted, and completed around the job. That is why the model feels different from a standard hourly labor approach."
-    />
-    <div class="mt-10">
-      <FaqAccordion items={faqs} />
+    <div class="grid gap-8 lg:grid-cols-[minmax(0,1fr)_24rem] lg:items-start">
+      <div>
+        <SectionIntro
+          eyebrow="Frequently asked questions"
+          title="Start with the high-stakes questions."
+          description="The answers below focus on pricing, supervision, safety, equipment, timing, and what makes a warehouse project quote-ready."
+        />
+        <div class="mt-10">
+          <FaqAccordion items={faqs} />
+        </div>
+      </div>
+
+      <aside class="card-dark p-8">
+        <p class="text-xs font-semibold uppercase tracking-[0.22em] text-accent-400">Quick clarity</p>
+        <h2 class="mt-4 text-2xl font-semibold tracking-tight text-white">Is ScopeOps the right fit?</h2>
+        <div class="mt-6">
+          <p class="text-sm font-semibold uppercase tracking-[0.18em] text-accent-400">Yes if</p>
+          <ul class="mt-4 space-y-3">
+            {fitYes.map((item) => (
+              <li class="flex gap-3 text-sm leading-7 text-white/80">
+                <span class="mt-1 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-accent-500/15 text-xs font-bold text-accent-400">+</span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div class="mt-8 border-t border-white/10 pt-6">
+          <p class="text-sm font-semibold uppercase tracking-[0.18em] text-accent-400">Probably not if</p>
+          <ul class="mt-4 space-y-3">
+            {fitNo.map((item) => (
+              <li class="flex gap-3 text-sm leading-7 text-white/70">
+                <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-white/45"></span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </aside>
     </div>
   </Section>
 
   <Section>
     <CTABanner
-      title="Still have questions about timing or how quoting works?"
-      description="Reach out directly or send a request with the warehouse task, expected volume, and timeline so the next step is easy to define."
+      eyebrow="No sales pressure"
+      title="Get a quote, not a sales pitch."
+      description="Not sure if your project fits the ScopeOps model? Send the details. We will give you a straight answer on whether the scope is quote-ready."
+      primaryLabel="Request a Project Quote"
     />
   </Section>
 </BaseLayout>

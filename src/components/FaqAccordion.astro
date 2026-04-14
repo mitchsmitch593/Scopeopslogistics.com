@@ -6,6 +6,9 @@ interface Props {
 }
 
 const { items } = Astro.props;
+
+const formatAnswer = (answer: string) =>
+  answer.replace(/\*\*(.*?)\*\*/g, '<strong class="font-semibold text-brand-950">$1</strong>');
 ---
 
 <div class="space-y-4">
@@ -17,7 +20,7 @@ const { items } = Astro.props;
           +
         </span>
       </summary>
-      <p class="mt-4 max-w-3xl text-sm leading-7 text-charcoal-800">{item.answer}</p>
+      <p class="mt-4 max-w-3xl text-sm leading-7 text-charcoal-800" set:html={formatAnswer(item.answer)} />
     </details>
   ))}
 </div>

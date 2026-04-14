@@ -2,43 +2,43 @@ import type { FaqItem } from '@/types/content';
 
 export const faqs: FaqItem[] = [
   {
-    question: 'How is this different from temp labor?',
+    question: 'How is this different from a temp agency?',
     answer:
-      'This model is built around getting warehouse work done, not supplying hourly headcount. You bring a task, backlog, surge, or special project. The work is scoped, quoted, and completed based on the job itself.',
+      '**Temp agencies sell time; ScopeOps sells a finished result.** The biggest difference is management drag. You bring a defined warehouse task, backlog, surge, or special project, and ScopeOps structures the work around completion instead of open-ended hourly coverage.',
+  },
+  {
+    question: 'How do you handle pricing?',
+    answer:
+      '**Quotes are project-based.** Pricing is built around the agreed scope, estimated volume, timeline, work type, and site requirements. If the scope changes, the quote can be reviewed before work proceeds so there are fewer surprises.',
+  },
+  {
+    question: 'What counts as a project or backlog?',
+    answer:
+      '**Anything with a defined start and finish can usually be reviewed.** Examples include unloading multiple containers, processing a returns backlog, clearing delayed pick-and-pack volume, or completing a one-time kitting run. If there is a clear done state, it can likely be scoped.',
+  },
+  {
+    question: 'What about safety and facility requirements?',
+    answer:
+      '**Safety alignment is part of the scope review.** ScopeOps plans work around your facility protocols, operating expectations, equipment rules, and site requirements before work begins. If a project has special compliance needs, include those details in the quote request.',
+  },
+  {
+    question: 'How quickly can you deploy a team?',
+    answer:
+      '**Timing depends on scope, location, and facility requirements.** ScopeOps is designed to move quickly once the work is defined, and most quote requests receive an initial response within one business day.',
+  },
+  {
+    question: 'Do I need to provide equipment?',
+    answer:
+      '**Most projects are planned around the facility workflow.** If forklifts, pallet jacks, RF scanners, docks, or other equipment are required, those details should be included during scoping so the work follows your standards and operating process.',
   },
   {
     question: 'What types of warehouse jobs do you handle?',
     answer:
-      'Typical work includes container unloading, pick and pack overflow, fulfillment support, kitting, reverse logistics, rework, backlog cleanup, and other warehouse projects your team does not have the capacity to absorb.',
-  },
-  {
-    question: 'Can you support overflow order volume?',
-    answer:
-      'Yes. Overflow fulfillment is one of the clearest use cases. If order volume jumps after a promotion, seasonal event, or retailer demand spike, the work can be scoped around volume, timing, and warehouse requirements.',
-  },
-  {
-    question: 'Do you handle one-time projects?',
-    answer:
-      'Yes. One-time work is often a strong fit, especially when the project is clearly defined and the goal is to get it done without redirecting your warehouse team.',
-  },
-  {
-    question: 'Can you help with kitting or reverse logistics?',
-    answer:
-      'Yes. Kitting, relabeling, assembly support, returns processing, and reverse-logistics cleanup are all examples of work that can be handled within a project-based scope.',
-  },
-  {
-    question: 'How do quotes work?',
-    answer:
-      'Quotes are based on the scope of work, expected volume, timeline, type of task, and facility or location details. The goal is a clear scope and a clear price tied to the job, not an hourly staffing arrangement.',
+      '**Common jobs include container unloading, pick and pack overflow, fulfillment support, kitting, reverse logistics, rework, backlog cleanup, and special warehouse projects.** The best fit is work with a clear goal and measurable volume.',
   },
   {
     question: 'Do you offer recurring support?',
     answer:
-      'Yes, when the workload pattern is consistent enough to define. Some businesses need one-time surge support, while others need recurring help with predictable overflow or project work.',
-  },
-  {
-    question: 'How quickly can we get started?',
-    answer:
-      'Timing depends on the job scope, facility requirements, and urgency, but the model is designed to move quickly when there is real warehouse work that needs fast relief.',
+      '**Yes, when the workload pattern is defined enough to plan.** Some companies need one-time surge support, while others need recurring help with predictable overflow, returns, or project work.',
   },
 ];
