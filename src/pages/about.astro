@@ -5,6 +5,42 @@ import Section from '@/components/Section.astro';
 import SectionIntro from '@/components/SectionIntro.astro';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import { siteConfig } from '@/data/site';
+
+const manifestoItems = [
+  {
+    title: 'Outcome over hours',
+    description:
+      'Open-ended hourly billing can reward slow work. ScopeOps is built around project-based quotes so the priority stays on finishing the warehouse task accurately and efficiently.',
+  },
+  {
+    title: 'Accountability on the floor',
+    description:
+      'ScopeOps does not simply drop off labor. Projects are coordinated around throughput, safety alignment, and the operating requirements of your facility.',
+  },
+  {
+    title: 'Surgical execution',
+    description:
+      'We are not here to replace your staff. We handle the operational debt: backlogs, rework, unloading, returns, and surges that should not slow down your primary operation.',
+  },
+];
+
+const comparisonRows = [
+  {
+    label: 'Training',
+    traditional: 'You explain the task, retrain as people rotate, and absorb the learning curve.',
+    scopeops: 'The project is reviewed up front so the team can be briefed around the work before execution.',
+  },
+  {
+    label: 'Supervision',
+    traditional: 'Your supervisors often become the day-to-day managers of temporary workers.',
+    scopeops: 'ScopeOps coordinates the project flow so your team can stay focused on the core operation.',
+  },
+  {
+    label: 'Buying model',
+    traditional: 'You pay for hours on the clock, even when progress is slow or unclear.',
+    scopeops: 'You request a completed warehouse task with pricing tied to scope, volume, and timing.',
+  },
+];
 ---
 
 <BaseLayout
@@ -13,76 +49,89 @@ import { siteConfig } from '@/data/site';
 >
   <Hero
     eyebrow="About"
-    title="A practical warehouse operations partner for project-based support."
-    description="ScopeOps is built for the operational work that does not fit neatly into the day: surges, backlog, rework, returns, unloading, and special projects."
-    primaryCta={{ label: 'Contact Us', href: '/contact' }}
+    title="The logistics partner we wished every warehouse had."
+    description="ScopeOps was built to solve a recurring warehouse failure: the gap between having people available and getting the project finished. We provide surgical capacity for teams that need to stay agile without the administrative drag of traditional labor searches."
+    primaryCta={{ label: 'Contact an Operations Expert', href: '/contact' }}
     secondaryCta={{ label: 'Request a Quote', href: '/request-a-quote' }}
     compact
-    panelTitle="Operating style"
-    panelBody="Straightforward communication, realistic expectations, and support that fits the way a warehouse actually runs."
+    panelTitle="Strategic capacity"
+    panelBody="The model is built for defined warehouse work: overflow, backlogs, rework, returns, unloading, and special projects that need focused execution."
   />
 
   <Section>
-    <div class="grid gap-10 lg:grid-cols-[minmax(0,1fr)_24rem]">
-      <SectionIntro
-        eyebrow="Positioning"
-        title="Built for teams that need capacity without adding confusion."
-        description="The role is to help companies move defined warehouse work forward while internal teams stay focused on their main operating responsibilities."
-      />
-      <div class="card-surface p-8">
-        <p class="text-xs font-semibold uppercase tracking-[0.22em] text-charcoal-800">Core principles</p>
-        <ul class="mt-5 space-y-4">
-          {siteConfig.aboutPrinciples.map((principle) => (
-            <li class="flex gap-3">
-              <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent-500"></span>
-              <span class="text-sm leading-7 text-charcoal-900">{principle}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
+    <div class="card-surface p-8 lg:p-10">
+      <p class="eyebrow">Why we exist</p>
+      <h2 class="mt-6 font-serif text-3xl font-medium tracking-tight text-brand-950 sm:text-4xl">
+        Built for the warehouse, not a generic vendor list.
+      </h2>
+      <p class="mt-5 max-w-4xl text-base leading-8 text-charcoal-800">
+        ScopeOps exists for the moments warehouse managers know too well: detention fees climbing, returns turning into a graveyard,
+        outbound volume slipping, and temporary labor creating more supervision than relief. The company is positioned to be the partner
+        operators actually need: one that reviews the task, coordinates the work, and helps clear the floor so the core team can keep the daily flow moving.
+      </p>
     </div>
   </Section>
 
   <Section surface="mist">
-    <div class="grid gap-6 lg:grid-cols-3">
-      <div class="card-surface p-7">
-        <h2 class="text-xl font-semibold tracking-tight text-brand-950">Execution-focused</h2>
-        <p class="mt-4 text-sm leading-7 text-charcoal-800">
-          The focus stays on warehouse work that needs to be completed, not vague labor coverage.
-        </p>
-      </div>
-      <div class="card-surface p-7">
-        <h2 class="text-xl font-semibold tracking-tight text-brand-950">Dependable</h2>
-        <p class="mt-4 text-sm leading-7 text-charcoal-800">
-          Clear communication, careful scoping, and realistic expectations shape the way the work gets handled.
-        </p>
-      </div>
-      <div class="card-surface p-7">
-        <h2 class="text-xl font-semibold tracking-tight text-brand-950">Built for warehouse reality</h2>
-        <p class="mt-4 text-sm leading-7 text-charcoal-800">
-          Built for use cases like overflow fulfillment, unloading, rework, returns, and backlog cleanup.
-        </p>
-      </div>
+    <SectionIntro
+      eyebrow="ScopeOps manifesto"
+      title="The principles behind the work."
+      description="The operating philosophy is simple: align incentives around completion, take project coordination seriously, and protect the client’s core operation."
+    />
+    <div class="mt-10 grid gap-6 lg:grid-cols-3">
+      {manifestoItems.map((item) => (
+        <article class="card-surface p-7">
+          <h2 class="text-xl font-semibold tracking-tight text-brand-950">{item.title}</h2>
+          <p class="mt-4 text-sm leading-7 text-charcoal-800">{item.description}</p>
+        </article>
+      ))}
     </div>
   </Section>
 
   <Section>
+    <SectionIntro
+      eyebrow="The ScopeOps difference"
+      title="A different buying model than traditional staffing."
+      description="The point is not to add more management burden to your floor. The point is to move defined warehouse work toward completion."
+    />
+    <div class="mt-10 overflow-hidden rounded-[1.75rem] border border-charcoal-100 bg-white shadow-[var(--shadow-panel)]">
+      <div class="grid bg-brand-950 px-6 py-4 text-sm font-semibold uppercase tracking-[0.18em] text-white md:grid-cols-[12rem_1fr_1fr]">
+        <p>Compare</p>
+        <p class="mt-3 md:mt-0">Traditional staffing</p>
+        <p class="mt-3 text-accent-400 md:mt-0">The ScopeOps way</p>
+      </div>
+      {comparisonRows.map((row) => (
+        <div class="grid border-t border-charcoal-100 px-6 py-5 md:grid-cols-[12rem_1fr_1fr]">
+          <p class="text-sm font-semibold text-brand-950">{row.label}</p>
+          <p class="mt-3 text-sm leading-7 text-charcoal-800 md:mt-0 md:pr-6">{row.traditional}</p>
+          <p class="mt-3 text-sm font-medium leading-7 text-charcoal-900 md:mt-0">{row.scopeops}</p>
+        </div>
+      ))}
+    </div>
+  </Section>
+
+  <Section surface="mist">
     <div class="card-dark p-8 lg:p-10">
-      <p class="eyebrow !border-white/15 !bg-white/5 !text-accent-400">How we work</p>
+      <p class="eyebrow !border-white/15 !bg-white/5 !text-accent-400">Our reach</p>
       <h2 class="mt-6 font-serif text-3xl font-medium tracking-tight text-balance sm:text-4xl">
-        A practical way to add warehouse capacity when the work is clear and the need is real.
+        Regional support with a rapid-response mindset.
       </h2>
       <p class="mt-5 max-w-3xl text-base leading-8 text-white/80">
-        Good warehouse support should make the day simpler, not harder. ScopeOps is positioned around defined work,
-        responsive communication, and project-based execution for teams that need relief without losing control of the operation.
+        ScopeOps is built to move with the urgency of a local partner and the discipline of a professional logistics operation.
+        Once you have a bottleneck, the goal is to review the workload quickly, clarify the scope, and give you a practical path forward.
       </p>
     </div>
   </Section>
 
   <Section>
     <CTABanner
-      title="Ready to scope a warehouse project or overflow need?"
-      description="Use the quote request flow for a clear warehouse job, or contact the team directly if you want to talk it through before requesting a quote."
+      eyebrow="Straightforward operations talk"
+      title="Let’s resolve the backlog."
+      description="Whether it is a 10,000-unit rework or a yard full of containers, let’s talk through the scope. No sales pressure, just a straightforward conversation about the work that needs relief."
+      primaryLabel="Contact the Team"
+      primaryHref="/contact"
+      secondaryLabel="Request a Quote"
+      secondaryHref="/request-a-quote"
     />
   </Section>
 </BaseLayout>
