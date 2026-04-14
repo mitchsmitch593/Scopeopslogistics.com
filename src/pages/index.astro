@@ -9,7 +9,13 @@ import { processSteps } from '@/data/process';
 import { siteConfig } from '@/data/site';
 
 const phoneHref = `tel:${siteConfig.contactPhone.replace(/[^\d]/g, '')}`;
-const valuePills = ['No payroll setup', 'No training lag', 'No overtime surprises', 'No temp-agency babysitting'];
+const hiddenCosts = [
+  'No payroll setup',
+  'No workers comp admin',
+  'No training lag',
+  'No overtime surprises',
+  'Less supervisor babysitting',
+];
 const authorityPoints = [
   {
     title: 'Outcome-based buying',
@@ -17,7 +23,7 @@ const authorityPoints = [
   },
   {
     title: 'Managed execution',
-    description: 'ScopeOps coordinates the work so your supervisors are not stuck managing every detail.',
+    description: 'ScopeOps provides project leadership for pace, quality, and safety so your supervisors are not stuck managing every detail.',
   },
   {
     title: 'Fast response',
@@ -81,7 +87,7 @@ const homepageServices = [
     eyebrow="Project-based warehouse execution"
     title="Warehouse work completed when your team is at capacity."
     description="Project-based execution for container unloading, fulfillment overflow, and backlog cleanup. We provide coordinated warehouse support so you get results without hiring temporary labor."
-    kicker="Fixed-rate project quotes | Managed execution | Safety-standard alignment"
+    kicker="Fixed-rate project quotes | Managed execution | Safety + insurance review"
     primaryCta={{ label: 'Get a Warehouse Quote', href: '/request-a-quote' }}
     secondaryCta={{ label: 'See Services', href: '/services' }}
     phoneCta={{ label: `Call ${siteConfig.contactPhone}`, href: phoneHref }}
@@ -123,12 +129,26 @@ const homepageServices = [
       </div>
     </div>
 
-    <div class="mt-8 grid gap-3 rounded-[1.75rem] border border-charcoal-100 bg-brand-950 p-4 text-white shadow-[var(--shadow-panel)] sm:grid-cols-2 lg:grid-cols-4">
-      {valuePills.map((pill) => (
-        <div class="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-center text-sm font-semibold">
-          {pill}
+    <div class="mt-8 rounded-[1.75rem] bg-brand-950 p-6 text-white shadow-[var(--shadow-panel)]">
+      <div class="flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-[0.22em] text-accent-400">Cost avoidance</p>
+          <h2 class="mt-3 text-2xl font-semibold tracking-tight">The hidden costs we eliminate.</h2>
         </div>
-      ))}
+        <p class="max-w-xl text-sm leading-7 text-white/70">
+          Project-based support keeps the focus on the finished workload instead of the administrative drag that often comes with short-term labor.
+        </p>
+      </div>
+      <div class="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
+        {hiddenCosts.map((cost) => (
+          <div class="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm font-semibold">
+            <svg class="h-4 w-4 shrink-0 text-accent-400" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M3.5 8.2 6.6 11.3 12.8 4.7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <span>{cost}</span>
+          </div>
+        ))}
+      </div>
     </div>
   </Section>
 
@@ -219,6 +239,7 @@ const homepageServices = [
       title="Stop the backlog today."
       description={`Do not let unprocessed returns, outbound spikes, or inbound containers stall your operation. Request a project quote and get an initial response within one business day. Call ${siteConfig.contactPhone} if the need is urgent.`}
       primaryLabel="Request a Project Quote"
+      supportText="Most quote requests receive an initial response within one business day."
     />
   </Section>
 </BaseLayout>

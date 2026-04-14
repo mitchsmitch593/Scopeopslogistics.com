@@ -23,7 +23,7 @@ export const processSteps: ProcessStep[] = [
     step: '04',
     title: 'Managed execution',
     description:
-      'ScopeOps coordinates pace and quality so your supervisors can stay focused on the core operation.',
+      'ScopeOps provides project leadership to manage team pace, quality, and safety so your supervisors can stay focused on the core operation.',
   },
   {
     step: '05',
