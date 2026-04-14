@@ -11,6 +11,7 @@ interface Props {
   kicker?: string;
   primaryCta?: Cta;
   secondaryCta?: Cta;
+  phoneCta?: Cta;
   highlights?: string[];
   panelTitle?: string;
   panelBody?: string;
@@ -24,6 +25,7 @@ const {
   kicker,
   primaryCta,
   secondaryCta,
+  phoneCta,
   highlights = [],
   panelTitle = 'Pay for results, not hours',
   panelBody = 'This model is designed for businesses that need warehouse work completed without treating labor as the product.',
@@ -60,6 +62,11 @@ const {
               </a>
             )}
           </div>
+        )}
+        {phoneCta && (
+          <a href={phoneCta.href} class="mt-4 inline-flex text-sm font-semibold text-brand-950 hover:text-brand-700 sm:hidden">
+            {phoneCta.label}
+          </a>
         )}
       </div>
 

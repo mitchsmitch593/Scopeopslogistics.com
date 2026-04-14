@@ -3,32 +3,26 @@ import type { ProcessStep } from '@/types/content';
 export const processSteps: ProcessStep[] = [
   {
     step: '01',
-    title: 'Send the job details',
+    title: 'Share the scope',
     description:
-      'Share the task, facility location, timing, and any operating constraints that matter.',
+      'Tell us the task, volume, timeline, location, and any facility requirements that matter.',
   },
   {
     step: '02',
-    title: 'We review the workload',
+    title: 'Get a project quote',
     description:
-      'We look at the work type, estimated units, timeline, and site conditions that affect execution.',
+      'Receive pricing tied to the specific warehouse work, expected volume, and timing.',
   },
   {
     step: '03',
-    title: 'You get job-based pricing',
+    title: 'Managed execution',
     description:
-      'The quote is tied to the project requirements instead of an open-ended hourly labor request.',
+      'ScopeOps coordinates the work with a focus on throughput, communication, and low disruption.',
   },
   {
     step: '04',
-    title: 'The project moves forward',
+    title: 'Immediate relief',
     description:
-      'The work is handled with a focus on throughput, communication, and keeping disruption low.',
-  },
-  {
-    step: '05',
-    title: 'Your team gets relief',
-    description:
-      'Supervisors and internal staff stay focused on the work they already own.',
+      'Your core team stays focused on daily operations while the bottleneck gets handled.',
   },
 ];
