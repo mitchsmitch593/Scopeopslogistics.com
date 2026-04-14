@@ -32,6 +32,9 @@ export interface Service {
   summary: string;
   benefit: string;
   useCases: string[];
+  trigger?: string;
+  outcome?: string;
+  badge?: string;
   seoTitle?: string;
   seoDescription?: string;
 }
