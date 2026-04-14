@@ -6,6 +6,9 @@ interface Props {
 }
 
 const { steps } = Astro.props;
+
+const formatDescription = (description: string) =>
+  description.replace(/\*\*(.*?)\*\*/g, '<strong class="font-semibold text-brand-950">$1</strong>');
 ---
 
 <ol class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
@@ -15,7 +18,7 @@ const { steps } = Astro.props;
         Step {item.step}
       </span>
       <h3 class="mt-4 text-xl font-semibold tracking-tight text-brand-950">{item.title}</h3>
-      <p class="mt-3 text-sm leading-7 text-charcoal-800">{item.description}</p>
+      <p class="mt-3 text-sm leading-7 text-charcoal-800" set:html={formatDescription(item.description)} />
     </li>
   ))}
 </ol>

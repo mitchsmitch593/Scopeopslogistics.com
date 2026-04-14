@@ -4,7 +4,7 @@ export const faqs: FaqItem[] = [
   {
     question: 'How is this different from a temp agency?',
     answer:
-      '**Temp agencies sell time; ScopeOps sells a finished result.** The biggest difference is management drag. You bring a defined warehouse task, backlog, surge, or special project, and ScopeOps structures the work around completion instead of open-ended hourly coverage. A project lead or single point of contact helps keep communication, pace, and execution organized.',
+      '**Temp agencies sell time; ScopeOps sells a finished result.** The biggest difference is management drag. You bring a defined warehouse task, backlog, surge, or special project, and ScopeOps structures the work around completion instead of open-ended hourly coverage. **A project lead or single point of contact** helps keep communication, pace, and execution organized.',
   },
   {
     question: 'How do you handle pricing?',

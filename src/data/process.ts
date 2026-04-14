@@ -11,7 +11,7 @@ export const processSteps: ProcessStep[] = [
     step: '02',
     title: 'Fixed-price project quote',
     description:
-      'Get pricing tied to the specific task. Once the scope is confirmed, pricing stays tied to that agreed scope; if requirements change, the quote is reviewed before work proceeds.',
+      '**Fixed-price project quote:** Get pricing tied to the specific task. Once the scope is confirmed, pricing stays tied to that agreed scope; if requirements change, the quote is reviewed before work proceeds.',
   },
   {
     step: '03',
@@ -23,7 +23,7 @@ export const processSteps: ProcessStep[] = [
     step: '04',
     title: 'Managed execution',
     description:
-      'ScopeOps provides project leadership to manage team pace, quality, and safety so your supervisors can stay focused on the core operation.',
+      '**Project leadership:** ScopeOps manages team pace, quality, and safety so your supervisors can stay focused on the core operation.',
   },
   {
     step: '05',
