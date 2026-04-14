@@ -10,6 +10,6 @@ export const navigationItems: NavItem[] = [
 ];
 
 export const primaryCta = {
-  label: 'Get a Project Quote',
+  label: 'Request a Project Quote',
   href: '/request-a-quote',
 };
