@@ -4,49 +4,57 @@ export const industries: Industry[] = [
   {
     title: 'E-commerce',
     description:
-      'For brands and fulfillment teams dealing with order spikes, promotional demand, or time-sensitive outbound volume.',
-    fit: 'Useful when overflow fulfillment, kitting, or order surges are straining daily output.',
+      'Order spikes, promotional demand, and time-sensitive outbound volume.',
+    fit: 'Resolve growth-induced fulfillment bottlenecks before customers feel them.',
+    triggerService: 'Best for pick and pack overflow.',
   },
   {
     title: 'Retail',
     description:
-      'For retail supply and replenishment teams that need help with inbound pressure, prep work, or store-related projects.',
-    fit: 'Good for promotional builds, relabeling, prep work, and inbound support.',
+      'Inbound pressure, store prep, relabeling, and promotional project work.',
+    fit: 'Keep replenishment and prep work moving when internal teams are already allocated.',
+    triggerService: 'Best for kitting and rework.',
   },
   {
     title: 'Consumer Products',
     description:
-      'For product companies managing packaging changes, seasonal peaks, retailer prep, and recurring warehouse overflow.',
-    fit: 'Useful when rework, bundling, or project work is slowing the floor.',
+      'Packaging changes, retailer prep, seasonal peaks, and recurring overflow.',
+    fit: 'Remove labor-heavy project work before it slows the rest of the floor.',
+    triggerService: 'Best for kitting and assembly.',
   },
   {
     title: 'Health and Wellness Products',
     description:
-      'For health and wellness brands that need warehouse relief without distracting the internal team from daily output.',
-    fit: 'A practical fit for kit builds, returns processing, and overflow support.',
+      'Subscription builds, bundle programs, returns volume, and outbound surges.',
+    fit: 'Move high-volume kitting and returns work without distracting daily output.',
+    triggerService: 'Best for subscription builds.',
   },
   {
     title: 'Food and Beverage Support',
     description:
-      'A fit for defined warehouse tasks in food and beverage environments where handling requirements, facility rules, and scope are clear.',
-    fit: 'Best for clearly scoped support work rather than open-ended labor fill-in.',
+      'Defined warehouse tasks where handling rules, facility standards, and scope are clear.',
+    fit: 'Add project capacity while staying aligned with site requirements.',
+    triggerService: 'Best for inbound support.',
   },
   {
     title: 'Industrial Goods',
     description:
-      'For industrial operations with project work, inbound or outbound pressure, and warehouse tasks that need focused attention.',
-    fit: 'Good for special projects, backlog cleanup, and structured support.',
+      'Heavy-duty inbound, palletizing, backlog cleanup, and structured project work.',
+    fit: 'Clear operational debt without pulling the core team away from daily flow.',
+    triggerService: 'Best for unloading and palletizing.',
   },
   {
     title: 'Growing Brands',
     description:
-      'For growing brands when order volume and complexity outpace available warehouse capacity.',
-    fit: 'Useful when growth starts creating recurring surges, backlog, or project work the team cannot absorb.',
+      'Growth-driven order volume, recurring surges, and warehouse complexity.',
+    fit: 'Absorb demand spikes while hiring and systems catch up.',
+    triggerService: 'Best for peak and surge support.',
   },
   {
     title: 'Overflow and Special Projects',
     description:
-      'A strong fit for businesses with warehouse work that is real, urgent, and defined, but not something they want to solve with traditional staffing.',
-    fit: 'Ideal when the main problem is getting the work done, not hiring a generic labor pool.',
+      'Defined warehouse work that is urgent, visible, and stuck between priorities.',
+    fit: 'Turn “we will get to it eventually” work into a scheduled project.',
+    triggerService: 'Best for rework and backlog cleanup.',
   },
 ];

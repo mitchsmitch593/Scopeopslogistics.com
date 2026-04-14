@@ -48,6 +48,7 @@ export interface Industry {
   title: string;
   description: string;
   fit: string;
+  triggerService?: string;
 }
 
 export interface FaqItem {

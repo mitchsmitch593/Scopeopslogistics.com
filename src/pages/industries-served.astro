@@ -6,6 +6,43 @@ import Section from '@/components/Section.astro';
 import SectionIntro from '@/components/SectionIntro.astro';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import { industries } from '@/data/industries';
+
+const operationalProfiles = [
+  {
+    label: 'Profile 01',
+    title: 'The high-growth brand',
+    who: 'D2C and e-commerce teams scaling faster than they can hire or train.',
+    pain: 'Marketing wins a big campaign, but the warehouse falls behind on shipping and backlog starts hurting the customer experience.',
+    help: 'ScopeOps adds surge capacity to clear the queue and stabilize fulfillment flow.',
+  },
+  {
+    label: 'Profile 02',
+    title: 'The lean operation',
+    who: 'Retail, industrial, and product teams that run a small, efficient core staff.',
+    pain: 'A container arrives, a rework project hits, or a special task appears with no spare team to handle it.',
+    help: 'ScopeOps executes the exception projects so your core team stays focused on daily flow.',
+  },
+  {
+    label: 'Profile 03',
+    title: 'The facility manager under pressure',
+    who: 'Warehouse GMs, operations managers, and logistics directors responsible for keeping the floor moving.',
+    pain: 'Detention fees, cluttered space, returns buildup, and hiring delays create visible pressure fast.',
+    help: 'ScopeOps helps clear the dock, reset the floor, and move the bottleneck without adding management drag.',
+  },
+];
+
+const fitChecklist = [
+  'You have a defined warehouse task, such as unloading containers, kitting units, or clearing returns.',
+  'You want project-based execution instead of open-ended hourly labor.',
+  'You need extra capacity without pulling your core team away from daily work.',
+  'You can share the work type, estimated volume, location, and timeline.',
+];
+
+const needsMoreScope = [
+  'You only need one person to stand at a station indefinitely.',
+  'The request is general labor coverage with no defined warehouse task.',
+  'The volume, timeline, or facility requirements are not clear enough to quote yet.',
+];
 ---
 
 <BaseLayout
@@ -14,53 +51,81 @@ import { industries } from '@/data/industries';
 >
   <Hero
     eyebrow="Who we help"
-    title="For product businesses dealing with warehouse surges, backlog, and project work."
-    description="The best fit is not about industry alone. It is about having a real warehouse workload that needs focused support."
-    primaryCta={{ label: 'Request a Quote', href: '/request-a-quote' }}
+    title="Built for operations teams at their breaking point."
+    description="Whether you are a growing D2C brand or an established industrial distributor, ScopeOps fits anywhere that needs managed warehouse execution without the overhead of a traditional labor search."
+    primaryCta={{ label: 'See if My Project is a Fit', href: '/request-a-quote' }}
     secondaryCta={{ label: 'View Services', href: '/services' }}
     compact
-    panelTitle="Where the model fits"
-    panelBody="Operations teams use this model when internal capacity is tight and the work is specific enough to review, quote, and schedule."
+    panelTitle="The real qualifier"
+    panelBody="Industry matters less than the situation: defined warehouse work, visible pressure, and not enough internal capacity to absorb it."
   />
 
   <Section>
     <SectionIntro
-      eyebrow="Where this works well"
-      title="Examples of the kinds of businesses we support."
-      description="These are common environments where project-based warehouse support can help protect throughput and reduce operational strain."
+      eyebrow="Operational profiles"
+      title="The best-fit customers usually recognize one of these situations."
+      description="This page is organized around the internal pressure point, not just the type of product a company sells."
     />
-    <div class="mt-10 grid gap-6 lg:grid-cols-2">
-      {industries.map((industry) => <IndustryCard industry={industry} />)}
+    <div class="mt-10 grid gap-6 lg:grid-cols-3">
+      {operationalProfiles.map((profile) => (
+        <article class="card-surface p-7">
+          <p class="text-xs font-semibold uppercase tracking-[0.22em] text-accent-500">{profile.label}</p>
+          <h2 class="mt-4 text-2xl font-semibold tracking-tight text-brand-950">{profile.title}</h2>
+          <div class="mt-5 space-y-4 text-sm leading-7 text-charcoal-800">
+            <p><span class="font-semibold text-brand-950">Who they are:</span> {profile.who}</p>
+            <p><span class="font-semibold text-brand-950">The pain:</span> {profile.pain}</p>
+            <p><span class="font-semibold text-brand-950">How we help:</span> {profile.help}</p>
+          </div>
+        </article>
+      ))}
     </div>
   </Section>
 
   <Section surface="mist">
-    <div class="grid gap-6 lg:grid-cols-3">
-      <div class="card-surface p-7">
-        <p class="text-xs font-semibold uppercase tracking-[0.22em] text-accent-500">Growing brands</p>
-        <p class="mt-4 text-sm leading-7 text-charcoal-900">
-          Especially useful when order volume, returns, or special projects start outpacing the team’s available capacity.
-        </p>
+    <div class="grid gap-8 lg:grid-cols-2">
+      <div class="card-surface p-8">
+        <p class="text-xs font-semibold uppercase tracking-[0.22em] text-accent-500">The ScopeOps fit</p>
+        <h2 class="mt-4 font-serif text-3xl font-medium tracking-tight text-brand-950">You are likely a fit if...</h2>
+        <ul class="mt-6 space-y-4">
+          {fitChecklist.map((item) => (
+            <li class="flex gap-3 text-sm leading-7 text-charcoal-900">
+              <span class="mt-1 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-accent-500/15 text-xs font-bold text-accent-500">+</span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
       </div>
-      <div class="card-surface p-7">
-        <p class="text-xs font-semibold uppercase tracking-[0.22em] text-accent-500">Established operations</p>
-        <p class="mt-4 text-sm leading-7 text-charcoal-900">
-          Also a fit for mature operations that do not want to disrupt the floor by reassigning internal staff to every exception.
-        </p>
+      <div class="card-dark p-8">
+        <p class="text-xs font-semibold uppercase tracking-[0.22em] text-accent-400">Needs more scope first</p>
+        <h2 class="mt-4 font-serif text-3xl font-medium tracking-tight text-white">Before quoting, we need a defined task.</h2>
+        <ul class="mt-6 space-y-4">
+          {needsMoreScope.map((item) => (
+            <li class="flex gap-3 text-sm leading-7 text-white/80">
+              <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent-400"></span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
       </div>
-      <div class="card-surface p-7">
-        <p class="text-xs font-semibold uppercase tracking-[0.22em] text-accent-500">Defined workload only</p>
-        <p class="mt-4 text-sm leading-7 text-charcoal-900">
-          The clearest fit is a real warehouse task, surge, or project with a measurable scope rather than an open-ended labor request.
-        </p>
-      </div>
+    </div>
+  </Section>
+
+  <Section>
+    <SectionIntro
+      eyebrow="Industry fit"
+      title="Common sectors, matched to the trigger service."
+      description="Different industries create different warehouse pressure points, but the buying reason is usually the same: work is stacking up and the team needs relief."
+    />
+    <div class="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+      {industries.map((industry) => <IndustryCard industry={industry} />)}
     </div>
   </Section>
 
   <Section>
     <CTABanner
-      title="Not sure if your operation is a fit?"
-      description="Reach out with the type of work, volume, and timeline. If the warehouse need is clear, it can usually be turned into a practical next step."
+      title="See if your warehouse project is a fit."
+      description="Send the task, volume, location, and timeline. ScopeOps will review whether the work is defined enough for a project-based quote."
+      primaryLabel="See if My Project is a Fit"
     />
   </Section>
 </BaseLayout>
