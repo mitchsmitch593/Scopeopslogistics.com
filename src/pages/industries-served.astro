@@ -11,6 +11,7 @@ const operationalProfiles = [
   {
     label: 'Profile 01',
     title: 'The high-growth brand',
+    tone: 'from-white to-mist-100',
     who: 'D2C and e-commerce teams scaling faster than they can hire or train.',
     pain: 'Marketing wins a big campaign, but the warehouse falls behind on shipping and backlog starts hurting the customer experience.',
     help: 'ScopeOps adds surge capacity to clear the queue and stabilize fulfillment flow.',
@@ -18,6 +19,7 @@ const operationalProfiles = [
   {
     label: 'Profile 02',
     title: 'The lean operation',
+    tone: 'from-accent-500/10 to-white',
     who: 'Retail, industrial, and product teams that run a small, efficient core staff.',
     pain: 'A container arrives, a rework project hits, or a special task appears with no spare team to handle it. Your core team gets pulled from daily outbound, creating shipping delays that can take weeks to recover from.',
     help: 'ScopeOps executes the exception projects so your core team stays focused on daily flow.',
@@ -25,9 +27,10 @@ const operationalProfiles = [
   {
     label: 'Profile 03',
     title: 'The facility manager under pressure',
+    tone: 'from-brand-950/[0.06] to-white',
     who: 'Warehouse GMs, operations managers, and logistics directors responsible for keeping the floor moving.',
     pain: 'Detention fees, cluttered space, returns buildup, and hiring delays create visible pressure fast.',
-    help: 'ScopeOps helps clear the dock, reset the floor, and move the bottleneck without adding management drag.',
+    help: 'ScopeOps helps clear the dock and reset the floor on autopilot, moving the bottleneck without adding another task to your plate.',
   },
 ];
 
@@ -68,7 +71,10 @@ const needsMoreScope = [
     />
     <div class="mt-10 grid gap-6 lg:grid-cols-3">
       {operationalProfiles.map((profile) => (
-        <article class="card-surface p-7">
+        <article class:list={['card-surface relative overflow-hidden border-t-4 border-t-accent-500 bg-linear-to-br p-7', profile.tone]}>
+          <div class="absolute right-5 top-5 rounded-full bg-brand-950 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-white/90">
+            {profile.label.replace('Profile ', '')}
+          </div>
           <p class="text-xs font-semibold uppercase tracking-[0.22em] text-accent-500">{profile.label}</p>
           <h2 class="mt-4 text-2xl font-semibold tracking-tight text-brand-950">{profile.title}</h2>
           <div class="mt-5 space-y-4 text-sm leading-7 text-charcoal-800">
@@ -89,7 +95,11 @@ const needsMoreScope = [
         <ul class="mt-6 space-y-4">
           {fitChecklist.map((item) => (
             <li class="flex gap-3 text-sm leading-7 text-charcoal-900">
-              <span class="mt-1 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-accent-500/15 text-xs font-bold text-accent-500">+</span>
+              <span class="mt-1 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-emerald-600 text-white" aria-hidden="true">
+                <svg class="h-3.5 w-3.5" viewBox="0 0 16 16" fill="none">
+                  <path d="M3.5 8.3 6.5 11.2 12.5 4.8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </span>
               <span>{item}</span>
             </li>
           ))}
@@ -101,7 +111,11 @@ const needsMoreScope = [
         <ul class="mt-6 space-y-4">
           {needsMoreScope.map((item) => (
             <li class="flex gap-3 text-sm leading-7 text-white/80">
-              <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent-400"></span>
+              <span class="mt-1 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-accent-500 text-brand-950" aria-hidden="true">
+                <svg class="h-3.5 w-3.5" viewBox="0 0 16 16" fill="none">
+                  <path d="M8 4.2v4.4M8 11.8h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                </svg>
+              </span>
               <span>{item}</span>
             </li>
           ))}
@@ -111,13 +125,13 @@ const needsMoreScope = [
   </Section>
 
   <Section>
-    <div class="mb-12 rounded-[2rem] border border-accent-500/25 bg-brand-950 p-8 text-white shadow-[var(--shadow-panel)] lg:p-10">
-      <p class="text-xs font-semibold uppercase tracking-[0.22em] text-accent-400">Execution model</p>
+    <div class="mb-12 rounded-[2rem] border border-accent-400/40 bg-accent-500 p-8 text-brand-950 shadow-[var(--shadow-panel)] lg:p-10">
+      <p class="text-xs font-semibold uppercase tracking-[0.22em] text-brand-950/70">Execution model</p>
       <div class="mt-4 grid gap-5 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] lg:items-end">
         <h2 class="font-serif text-3xl font-medium tracking-tight sm:text-4xl">
           Industry matters less than the situation.
         </h2>
-        <p class="text-sm leading-7 text-white/75">
+        <p class="text-sm font-medium leading-7 text-brand-950/80">
           ScopeOps is built for defined warehouse work with visible pressure: a backlog, a surge, a container problem, a rework project, or a task your internal team cannot absorb without slowing daily operations.
         </p>
       </div>
