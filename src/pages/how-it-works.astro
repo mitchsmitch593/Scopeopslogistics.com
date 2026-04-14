@@ -7,6 +7,29 @@ import SectionIntro from '@/components/SectionIntro.astro';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import { processSteps } from '@/data/process';
 import { siteConfig } from '@/data/site';
+
+const timelineItems = [
+  {
+    label: 'Hour 0',
+    title: 'Request submitted',
+    description: 'Send the task, volume, timeline, and location through the quote form.',
+  },
+  {
+    label: 'Next business day',
+    title: 'Scope review begins',
+    description: 'ScopeOps reviews the workload and follows up if details are needed.',
+  },
+  {
+    label: 'After scope confirmation',
+    title: 'Project quote delivered',
+    description: 'You receive pricing tied to the project requirements and operating conditions.',
+  },
+  {
+    label: 'Scheduled window',
+    title: 'Team deployed',
+    description: 'Work begins once timing, access, and site expectations are aligned.',
+  },
+];
 ---
 
 <BaseLayout
@@ -15,20 +38,20 @@ import { siteConfig } from '@/data/site';
 >
   <Hero
     eyebrow="How it works"
-    title="From warehouse issue to quoted project."
-    description="The process is designed for busy operators: share the job details, confirm the workload, receive project-based pricing, and move forward."
-    primaryCta={{ label: 'Request a Quote', href: '/request-a-quote' }}
+    title="The fast track to a clear floor."
+    description="No long hiring cycles. No administrative drag. ScopeOps streamlines quoting and deployment so warehouse bottlenecks can move from problem to action quickly."
+    primaryCta={{ label: 'Request a Project Quote', href: '/request-a-quote' }}
     secondaryCta={{ label: 'Contact Us', href: '/contact' }}
     compact
-    panelTitle="Built for operators"
-    panelBody="Most teams already know where the pressure is. ScopeOps turns that pressure point into a practical review and quote."
+    panelTitle="Zero administrative drag"
+    panelBody="Most teams already know what is stuck. ScopeOps helps turn that pressure point into a reviewed scope, project quote, and execution path."
   />
 
   <Section>
     <SectionIntro
       eyebrow="The process"
-      title="Five steps designed to keep the request simple."
-      description="The goal is to understand the job quickly, quote it responsibly, and avoid turning every warehouse surge into a hiring project."
+      title="High-accountability support for busy warehouse managers."
+      description="The goal is to remove friction: you share the scope, ScopeOps reviews the workload, and the project moves forward without turning into a long labor search."
     />
     <div class="mt-10">
       <ProcessSteps steps={processSteps} />
@@ -36,11 +59,24 @@ import { siteConfig } from '@/data/site';
   </Section>
 
   <Section surface="mist">
+    <div class="card-dark p-8 lg:p-10">
+      <p class="eyebrow !border-white/15 !bg-white/5 !text-accent-400">Supervisor-centric support</p>
+      <h2 class="mt-6 font-serif text-3xl font-medium tracking-tight text-balance sm:text-4xl">
+        Less babysitting for your supervisors.
+      </h2>
+      <p class="mt-5 max-w-3xl text-base leading-8 text-white/80">
+        The biggest cost of traditional labor is often the time your supervisors spend directing it. ScopeOps structures
+        projects around coordinated execution, throughput, and safety alignment so your managers can stay focused on daily operations.
+      </p>
+    </div>
+  </Section>
+
+  <Section>
     <div class="grid gap-8 lg:grid-cols-[minmax(0,1fr)_24rem]">
       <SectionIntro
-        eyebrow="What drives the quote"
-        title="The quote is based on workload and operating conditions."
-        description="Volume, urgency, work type, site requirements, and location all affect what it takes to complete the project."
+        eyebrow="Quote transparency"
+        title="Project pricing is designed to reduce surprises."
+        description="Instead of an open-ended hourly meter, ScopeOps reviews the workload up front and prices around the task, expected volume, timing, and site requirements."
       />
       <div class="card-surface p-8">
         <ul class="space-y-4">
@@ -51,37 +87,36 @@ import { siteConfig } from '@/data/site';
             </li>
           ))}
         </ul>
+        <p class="mt-6 rounded-2xl bg-mist-100 p-5 text-sm font-semibold leading-7 text-brand-950">
+          The price reflects the project information provided. If the scope changes, the quote can be reviewed before work proceeds.
+        </p>
       </div>
     </div>
   </Section>
 
-  <Section>
-    <div class="grid gap-6 lg:grid-cols-3">
-      <div class="card-surface p-7">
-        <p class="text-xs font-semibold uppercase tracking-[0.22em] text-accent-500">Simple to explain internally</p>
-        <p class="mt-4 text-sm leading-7 text-charcoal-900">
-          This is easier to explain internally because it solves a clear workload problem with a clear plan and a clear price.
-        </p>
-      </div>
-      <div class="card-surface p-7">
-        <p class="text-xs font-semibold uppercase tracking-[0.22em] text-accent-500">Fast to deploy</p>
-        <p class="mt-4 text-sm leading-7 text-charcoal-900">
-          A clear warehouse job usually leads to a faster conversation and a faster next step.
-        </p>
-      </div>
-      <div class="card-surface p-7">
-        <p class="text-xs font-semibold uppercase tracking-[0.22em] text-accent-500">Focused on results</p>
-        <p class="mt-4 text-sm leading-7 text-charcoal-900">
-          The outcome is completed warehouse work and less pressure on your team.
-        </p>
-      </div>
+  <Section surface="mist">
+    <SectionIntro
+      eyebrow="Rapid response"
+      title="A practical timeline for urgent warehouse work."
+      description="Exact timing depends on scope, location, access, and facility requirements, but the process is built to move quickly once the work is defined."
+    />
+    <div class="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+      {timelineItems.map((item) => (
+        <article class="card-surface p-7">
+          <p class="text-xs font-semibold uppercase tracking-[0.22em] text-accent-500">{item.label}</p>
+          <h3 class="mt-4 text-xl font-semibold tracking-tight text-brand-950">{item.title}</h3>
+          <p class="mt-3 text-sm leading-7 text-charcoal-800">{item.description}</p>
+        </article>
+      ))}
     </div>
   </Section>
 
   <Section>
     <CTABanner
-      title="Have a warehouse project, surge, or backlog to scope?"
-      description="Send over the job details and get the quote process started with the information needed to move quickly."
+      eyebrow="Stop the administrative headache"
+      title="Get a quote today."
+      description={`Send the workload, volume, and timeline. ScopeOps will review the request and respond within one business day for most quote requests. Call ${siteConfig.contactPhone} if the bottleneck is urgent.`}
+      primaryLabel="Request a Project Quote"
     />
   </Section>
 </BaseLayout>
