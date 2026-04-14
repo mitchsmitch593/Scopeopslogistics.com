@@ -13,7 +13,7 @@ export const siteConfig: SiteConfig = {
   generalEmail: 'info@scopeopslogistics.com',
   ownerEmail: 'mitch@scopeopslogistics.com',
   contactPhone: '347-320-5273',
-  serviceArea: 'Regional warehouse operations support',
+  serviceArea: 'Serving the regional area of Columbus, Ohio',
   responseTime: 'Initial response within one business day for most quote requests.',
   heroHighlights: [
     'Project-based support for warehouse surges and backlogs',
