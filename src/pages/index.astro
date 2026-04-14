@@ -1,24 +1,16 @@
 ---
 import CTABanner from '@/components/CTABanner.astro';
-import DifferentiatorSection from '@/components/DifferentiatorSection.astro';
 import Hero from '@/components/Hero.astro';
-import IndustryCard from '@/components/IndustryCard.astro';
-import OperationsGallery from '@/components/OperationsGallery.astro';
 import ProcessSteps from '@/components/ProcessSteps.astro';
 import Section from '@/components/Section.astro';
 import SectionIntro from '@/components/SectionIntro.astro';
 import ServiceCard from '@/components/ServiceCard.astro';
-import UseCaseCard from '@/components/UseCaseCard.astro';
-import { operationalImages } from '@/data/media';
 import BaseLayout from '@/layouts/BaseLayout.astro';
-import { industries } from '@/data/industries';
 import { processSteps } from '@/data/process';
 import { services } from '@/data/services';
 import { siteConfig } from '@/data/site';
-import { useCases } from '@/data/useCases';
 
 const featuredServices = services.slice(0, 4);
-const featuredIndustries = industries.slice(0, 4);
 ---
 
 <BaseLayout
@@ -36,19 +28,6 @@ const featuredIndustries = industries.slice(0, 4);
     panelTitle="Built for work that needs relief"
     panelBody="Bring us a clear warehouse job and we will help you get it done with a clear scope, a clear quote, and a clear next step."
   />
-
-  <Section className="!pt-8 sm:!pt-10 lg:!pt-12 !pb-0">
-    <div class="rounded-[1.5rem] border border-charcoal-100 bg-white/80 px-6 py-4 shadow-sm backdrop-blur">
-      <div class="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
-        <p class="text-sm font-medium text-charcoal-900">
-          Serving businesses with <span class="font-semibold text-brand-950">project-based warehouse support</span> for overflow, backlog, and special work.
-        </p>
-        <a href="/contact" class="text-sm font-semibold text-brand-950 hover:text-brand-700">
-          Talk through local fit
-        </a>
-      </div>
-    </div>
-  </Section>
 
   <Section>
     <div class="grid gap-10 lg:grid-cols-[minmax(0,1fr)_24rem] lg:items-start">
@@ -70,7 +49,7 @@ const featuredIndustries = industries.slice(0, 4);
       </div>
     </div>
 
-    <div class="mt-8 rounded-[1.75rem] border border-charcoal-100 bg-white/80 px-6 py-5 shadow-sm backdrop-blur">
+    <div class="mt-8 rounded-[1.75rem] border border-charcoal-100 bg-white/80 px-6 py-5 shadow-sm">
       <div class="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
         <p class="text-xs font-semibold uppercase tracking-[0.22em] text-charcoal-800">Common jobs we quote</p>
         <div class="flex flex-wrap gap-3 text-sm font-medium text-brand-950">
@@ -82,12 +61,10 @@ const featuredIndustries = industries.slice(0, 4);
         </div>
       </div>
     </div>
+  </Section>
 
-    <div class="mt-8">
-      <OperationsGallery images={operationalImages} />
-    </div>
-
-    <div class="mt-12 flex items-end justify-between gap-6">
+  <Section surface="mist">
+    <div class="flex items-end justify-between gap-6">
       <SectionIntro
         eyebrow="Core services"
         title="Common types of warehouse work we handle."
@@ -107,21 +84,6 @@ const featuredIndustries = industries.slice(0, 4);
     </div>
   </Section>
 
-  <Section surface="mist">
-    <DifferentiatorSection />
-  </Section>
-
-  <Section surface="mist" className="relative overflow-hidden">
-    <SectionIntro
-      eyebrow="You call us when"
-      title="Work is piling up and your team cannot keep taking it on."
-      description="This model works best when the need is clear, the pressure is real, and you do not want to pull your team away from the work it already owns."
-    />
-    <div class="mt-10 grid gap-6 md:grid-cols-2">
-      {useCases.map((useCase) => <UseCaseCard useCase={useCase} />)}
-    </div>
-  </Section>
-
   <Section className="!pt-14 sm:!pt-16">
     <SectionIntro
       eyebrow="How it works"
@@ -130,39 +92,6 @@ const featuredIndustries = industries.slice(0, 4);
     />
     <div class="mt-10">
       <ProcessSteps steps={processSteps} />
-    </div>
-  </Section>
-
-  <Section className="!pb-14 sm:!pb-16">
-    <div class="grid gap-8 lg:grid-cols-[minmax(0,1fr)_24rem]">
-      <SectionIntro
-        eyebrow="Who this works for"
-        title="Built for teams under real warehouse pressure."
-        description="A strong fit for product businesses dealing with overflow, backlog, and warehouse projects that need to be handled without slowing down the rest of the floor."
-      />
-      <div class="card-surface p-8">
-        <p class="text-xs font-semibold uppercase tracking-[0.22em] text-charcoal-800">Best fit for</p>
-        <div class="mt-5 space-y-4 text-sm leading-7 text-charcoal-900">
-          {siteConfig.qualificationFits.map((item) => <p>{item}</p>)}
-        </div>
-      </div>
-    </div>
-    <div class="mt-8">
-      <div>
-        <div class="flex items-end justify-between gap-6">
-          <SectionIntro
-            eyebrow="Industries"
-            title="Common types of businesses we support."
-            description="E-commerce brands, retailers, consumer product companies, industrial operations, and growing businesses often run into the same problem: too much warehouse work for the current team to keep absorbing."
-          />
-          <a href="/industries-served" class="btn-secondary hidden lg:inline-flex">
-            Explore Fit
-          </a>
-        </div>
-        <div class="mt-10 grid gap-6 md:grid-cols-2">
-          {featuredIndustries.map((industry) => <IndustryCard industry={industry} />)}
-        </div>
-      </div>
     </div>
   </Section>
 
