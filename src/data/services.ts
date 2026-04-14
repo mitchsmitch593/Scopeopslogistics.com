@@ -12,7 +12,7 @@ export const services: Service[] = [
     benefit:
       'Reduce inbound bottlenecks while your internal team stays focused on receiving, shipping, and daily priorities.',
     trigger: 'Use when containers are stacking up and the yard is becoming a liability.',
-    outcome: 'Result: A cleared dock, staged freight, and less pressure on receiving.',
+    outcome: 'Result: A cleared dock, staged freight, and less exposure to detention or yard fees.',
     badge: 'Managed team',
     useCases: [
       'One or more containers waiting on the dock',
@@ -109,6 +109,7 @@ export const services: Service[] = [
     trigger: 'Use for quality-hold inspections, relabeling, repacking, or corrective work that keeps getting delayed.',
     outcome: 'Result: Exceptions are resolved and operational debt stops distracting the floor.',
     badge: 'Project execution',
+    ctaLabel: 'Fix This Project',
     useCases: [
       'Packaging changes or relabeling',
       'Quality-hold remediation',
@@ -128,6 +129,7 @@ export const services: Service[] = [
     trigger: 'Use for the “we will get to it eventually” work that never becomes the top internal priority.',
     outcome: 'Result: Overdue warehouse tasks are moved off the floor and out of the team’s way.',
     badge: 'Project execution',
+    ctaLabel: 'Solve This Backlog',
     useCases: [
       'Backlog cleanup and overdue tasks',
       'Cycle-count support or special counts',

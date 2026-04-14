@@ -59,7 +59,7 @@ const { service, compact = false } = Astro.props;
 
   <div class="mt-8 grid gap-3 pt-6">
     <a href="/request-a-quote" class="btn-primary w-full">
-      Get a Quote
+      {service.ctaLabel ?? 'Get a Quote'}
     </a>
   </div>
 </article>

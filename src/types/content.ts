@@ -35,6 +35,7 @@ export interface Service {
   trigger?: string;
   outcome?: string;
   badge?: string;
+  ctaLabel?: string;
   seoTitle?: string;
   seoDescription?: string;
 }
