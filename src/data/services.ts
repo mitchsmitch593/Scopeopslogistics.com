@@ -90,6 +90,7 @@ export const services: Service[] = [
     trigger: 'Use when returns have become a months-old pileup that is stealing space and attention.',
     outcome: 'Result: Returns are sorted, inspected, and moved toward restock, disposition, or next action.',
     badge: 'Managed team',
+    ctaLabel: 'Clear This Backlog',
     useCases: [
       'Returns backlog processing',
       'Sorting, disposition, and re-entry workflows',
